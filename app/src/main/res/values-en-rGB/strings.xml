@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VapeApp</string>
+    <string name="Aromas_Id">Identifier</string>
+    <string name="Aromas_Nombre">Flavour Name</string>
+    <string name="Aromas_HintId">Id</string>
+    <string name="Aromas_HintNombre">Flavour Name</string>
+    <string name="Aromas_Marca">Brand</string>
+    <string name="Aromas_HintMarca">Flavour Brand</string>
+    <string name="Aromas_Tipo">Type</string>
+
+     <string-array name="tipos">
+
+        <item>Fruit</item>
+        <item>Drinks</item>
+        <item>Creams</item>
+        <item>Desserts</item>
+        <item>Tobbaco</item>
+        <item>Others</item>
+
+    </string-array>
+
+</resources>
