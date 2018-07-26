@@ -29,10 +29,14 @@ public class AromasActivity extends AppCompatActivity {
         rellenaDesplegable();
         /*Llamo a la función que va a controlar si se cambia el valor del SeekBar y si es así,
         modificar el contenido del EditText correspondiente*/
-        controlaSb();
+        controlaSbPorcetaje();
+        controlaSbMinimo();
+        controlaSbMaximo();
         /*Llamo a la función que va a controlar si el contenido del EditText ha cambiado y si es
         así, cambio el valor del SeekBar.*/
-        controlaEdt();
+        controlaEdtPorcentaje();
+        controlaEdtMinimo();
+        controlaEdtMaximo();
 
     }
 
@@ -52,14 +56,18 @@ public class AromasActivity extends AppCompatActivity {
 
     }
 
-    public void controlaSb(){
+    public void controlaSbPorcetaje(){
 
         sbPorcentaje.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
             @Override
             public void onProgressChanged(SeekBar porcentaje, int i, boolean b) {
 
-                ePorcentaje.setText(getString(R.string.Vacio, porcentaje.getProgress()));
+                /* He creado en string.XML la etiqueta Aromas_FormatoString para que el número
+                almacenado en porcentaje.getProgress() lo tome el EditText con formato texto, ya
+                que los EditText sólo admite contenido de tipo String.*/
+                ePorcentaje.setText(getString(R.string.Aromas_FormatoString,
+                        porcentaje.getProgress()));
 
             }
 
@@ -76,7 +84,63 @@ public class AromasActivity extends AppCompatActivity {
 
     }
 
-    public void controlaEdt(){
+    public void controlaSbMinimo(){
+
+        sbMinMaceracion.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar minimo, int i, boolean b) {
+
+                 /* He creado en string.XML la etiqueta Aromas_FormatoString para que el número
+                almacenado en porcentaje.getProgress() lo tome el EditText con formato texto, ya
+                que los EditText sólo admite contenido de tipo String.*/
+                eMinMaceracion.setText(getString(R.string.Aromas_FormatoString,
+                        minimo.getProgress()));
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+
+        });
+
+    }
+
+    public void controlaSbMaximo(){
+
+        sbMaxMaceracion.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar maximo, int i, boolean b) {
+
+                 /* He creado en string.XML la etiqueta Aromas_FormatoString para que el número
+                almacenado en porcentaje.getProgress() lo tome el EditText con formato texto, ya
+                que los EditText sólo admite contenido de tipo String.*/
+                eMaxMaceracion.setText(getString(R.string.Aromas_FormatoString,
+                        maximo.getProgress()));
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+
+        });
+
+    }
+
+    public void controlaEdtPorcentaje(){
 
         ePorcentaje.addTextChangedListener(new TextWatcher() {
             @Override
@@ -103,6 +167,54 @@ public class AromasActivity extends AppCompatActivity {
             public void afterTextChanged(Editable editable) {
 
             }
+        });
+
+    }
+
+    public void controlaEdtMinimo(){
+
+        eMinMaceracion.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                sbMinMaceracion.setProgress(parseInt(eMinMaceracion.getText().toString()));
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+
+        });
+
+    }
+
+    public void controlaEdtMaximo(){
+
+        eMaxMaceracion.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                sbMaxMaceracion.setProgress(parseInt(eMaxMaceracion.getText().toString()));
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+
         });
 
     }
