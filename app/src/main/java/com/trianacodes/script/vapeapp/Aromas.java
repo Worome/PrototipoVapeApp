@@ -3,9 +3,10 @@ package com.trianacodes.script.vapeapp;
 public class Aromas {
 
 
-    //Creo los argumentos
-    public int Identificador, tiempoMinimoMaceracion, tiempoMaximoMaceracion, porcentajeRecomendado;
-    public String Tipo, Nombre, Marca   ;
+    /*Creo los argumentos con private para que no se pueda acceder a ellos nada ás que desde
+    esta clase.*/
+    private int Identificador, tiempoMinimoMaceracion, tiempoMaximoMaceracion, porcentajeRecomendado;
+    private String Tipo, Nombre, Marca   ;
 
 
     //Creo el constructor

@@ -16,6 +16,7 @@
     <string name="Aromas_btnAnadir">Añadir</string>
     <string name="Aromas_btnModificar">Modificar</string>
     <string name="Aromas_btnBorrar">Eliminar</string>
+    <string name="Vacio">"%1$i"</string>
 
     <string-array name="tipos">
 

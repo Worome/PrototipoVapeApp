@@ -8,8 +8,6 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.Spinner;
-import android.widget.Toast;
-
 import static java.lang.Integer.parseInt;
 
 public class AromasActivity extends AppCompatActivity {
@@ -59,9 +57,9 @@ public class AromasActivity extends AppCompatActivity {
         sbPorcentaje.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
             @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+            public void onProgressChanged(SeekBar porcentaje, int i, boolean b) {
 
-                ePorcentaje.setText(""+ sbPorcentaje.getProgress());
+                ePorcentaje.setText(getString(R.string.Vacio, porcentaje.getProgress()));
 
             }
 
@@ -89,15 +87,15 @@ public class AromasActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-                if (ePorcentaje.getText().toString() != null){
+               // if (ePorcentaje.getText().toString() != null){
 
                     sbPorcentaje.setProgress(parseInt(ePorcentaje.getText().toString()));
 
-                } else {
+                //} else {
 
-                    sbPorcentaje.setProgress(0);
+                //    sbPorcentaje.setProgress(0);
 
-                }
+                //}
 
             }
 
