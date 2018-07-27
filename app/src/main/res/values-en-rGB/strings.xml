@@ -21,7 +21,6 @@
     </string-array>
     <string name="Aromas_Porcentaje">Recommended Percent</string>
     <string name="Aromas_HintPorcentaje">0-100</string>
-    <string name="Aromas_FormatoString">%1$i</string>
     <string name="Aromas_btnBorrar">Delete</string>
     <string name="Aromas_btnModificar">Update</string>
     <string name="Aromas_btnAnadir">Insert</string>
@@ -29,5 +28,6 @@
     <string name="Aromas_HintMinMaceracion">0-8</string>
     <string name="Aromas_MinMaceracion">Minimum maceration time</string>
     <string name="Aromas_MaxMaceracion">Maximum maceration time</string>
+    <string name="Aromas_Valor_0">0</string>
 
 </resources>
