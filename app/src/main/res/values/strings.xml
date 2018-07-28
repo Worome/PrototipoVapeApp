@@ -11,7 +11,7 @@
     <string name="Aromas_HintPorcentaje">0-100</string>
     <string name="Aromas_MinMaceracion">Tiempo mínimo maceración</string>
     <string name="Aromas_HintMinMaceracion">0-8</string>
-    <string name="Aromas_Semanas">Semanas</string>
+    <string name="Aromas_Semanas">(Semanas)</string>
     <string name="Aromas_MaxMaceracion">Tiempo máximo maceración</string>
     <string name="Aromas_btnAnadir">Añadir</string>
     <string name="Aromas_btnModificar">Modificar</string>

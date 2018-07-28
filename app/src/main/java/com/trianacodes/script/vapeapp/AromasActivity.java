@@ -5,20 +5,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import static java.lang.Integer.parseInt;
 
-// TODO: Ver cómo mostrar el cursor en un EditText
 // TODO: Mejorar diseño Activity
-// TODO: Hacer que el primer foco sea sobre Nombre del aroma
 // TODO: Hacer diseño para tablets
 // TODO: Cambiar apariencia a los SeekBar
 // TODO: Hacer que al recibir el foco un EditText seleccione todo el texto
-// TODO: Ver cómo hacer que se escriba de izquierda a derecha en EditText
 /* Todo: Anotar en los apuntes de Android que para hacer que un componente de la interfaz no obtenga
          nunca el foco, hay que hacerlo desde el XML de la interfaz, en la etiqueta del elemento,
          poniendo android:focusable = "false"*/
@@ -28,7 +25,7 @@ public class AromasActivity extends AppCompatActivity {
 
     private Spinner desplegable;
     private SeekBar sbPorcentaje, sbMinMaceracion, sbMaxMaceracion;
-    private EditText ePorcentaje, eMinMaceracion, eMaxMaceracion;
+    private TextView ePorcentaje, eMinMaceracion, eMaxMaceracion;
     private String controlVacio;
 
     @Override
@@ -44,14 +41,6 @@ public class AromasActivity extends AppCompatActivity {
         sbMaxMaceracion = findViewById(R.id.sbMaxMaceracion);
         eMaxMaceracion = findViewById(R.id.etMaxMaceracion);
         Procesos();
-        //Llamo a la función que rellena de datos el desplegable
-        //rellenaDesplegable();
-        /*Llamo a la función que va a controlar si se cambia el valor del SeekBar y si es así,
-        modificar el contenido del EditText correspondiente*/
-        //controlaSbPorcetaje();
-        //controlaSbMinimo();
-        //controlaSbMaximo();
-
 
     }
 
@@ -107,8 +96,7 @@ public class AromasActivity extends AppCompatActivity {
                 /* Uso String.ValueOf para que el número almacenado en porcentaje.getProgress()
                 lo tome el EditText con formato texto, ya que los EditText sólo admiten contenido
                 de tipo String.*/
-                    //ePorcentaje.setText(getString(R.string.Aromas_FormatoString,
-                    //porcentaje.getProgress()));
+
                     ePorcentaje.setText(String.valueOf(porcentaje.getProgress()));
 
                 }
@@ -143,8 +131,7 @@ public class AromasActivity extends AppCompatActivity {
                  /* Uso String.ValueOf para que el número almacenado en porcentaje.getProgress()
                 lo tome el EditText con formato texto, ya que los EditText sólo admiten contenido
                 de tipo String.*/
-                    //eMinMaceracion.setText(getString(R.string.Aromas_FormatoString,
-                    //      minimo.getProgress()));
+
                     eMinMaceracion.setText(String.valueOf(minimo.getProgress()));
 
                 }
@@ -179,9 +166,9 @@ public class AromasActivity extends AppCompatActivity {
                  /* Uso String.ValueOf para que el número almacenado en porcentaje.getProgress()
                 lo tome el EditText con formato texto, ya que los EditText sólo admiten contenido
                 de tipo String.*/
-                //eMaxMaceracion.setText(getString(R.string.Aromas_FormatoString,
-                  //      maximo.getProgress()));
+
                 eMaxMaceracion.setText(String.valueOf(maximo.getProgress()));
+
             }
 
             @Override
@@ -217,6 +204,7 @@ public class AromasActivity extends AppCompatActivity {
                         controlVacio = "0";
 
                     }
+
                     sbPorcentaje.setProgress(parseInt(controlVacio));
 
                 }
@@ -291,9 +279,11 @@ public class AromasActivity extends AppCompatActivity {
                     controlVacio = eMaxMaceracion.getText().toString();
                     if (controlVacio.isEmpty()){
 
+
                         controlVacio = "0";
 
                     }
+
                     sbMaxMaceracion.setProgress(parseInt(controlVacio));
 
                 }
