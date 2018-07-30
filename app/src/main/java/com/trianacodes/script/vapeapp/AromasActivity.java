@@ -21,6 +21,8 @@ import static java.lang.Integer.parseInt;
          poniendo android:focusable = "false"*/
 /* Todo: Anotar en los apuntes de Android que para controlar si un EditText está vacío o no, se usa
          el método isEmpty()*/
+/*Todo: Anotar en los apuntes que para cambiar de color un hint hay que usar la propiedad
+        android:textColorHint (android:textColorHint="@color/<nombre del color que he creado>"*/
 public class AromasActivity extends AppCompatActivity {
 
     private Spinner desplegable;
