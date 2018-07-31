@@ -13,6 +13,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.trianacodes.script.vapeapp.sqlite.DbHelper;
+
 import static java.lang.Integer.parseInt;
 
 // TODO: Mejorar diseño Activity

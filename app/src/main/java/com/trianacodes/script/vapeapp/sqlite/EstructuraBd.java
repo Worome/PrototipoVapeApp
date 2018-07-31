@@ -21,7 +21,7 @@ public class EstructuraBd {
     private static final String INTEGER_TYPE = " INTEGER";
     private static final String COMMA_SEP = ",";
 
-    public static final String SQL_CREATE_ENTRIES1 = "CREATE TABLE " + TABLE_NAME2 +
+    public static final String SQL_CREATE_AROMAS = "CREATE TABLE " + TABLE_NAME2 +
             " (" + NOMBRE_CAMPO21 + " INTEGER PRIMARY KEY autoincrement, " + NOMBRE_CAMPO22 + TEXT_TYPE +
             COMMA_SEP + NOMBRE_CAMPO23 + TEXT_TYPE + COMMA_SEP + NOMBRE_CAMPO24 + TEXT_TYPE +
             COMMA_SEP + NOMBRE_CAMPO25 + INTEGER_TYPE + COMMA_SEP + NOMBRE_CAMPO26 + INTEGER_TYPE +
@@ -32,7 +32,7 @@ public class EstructuraBd {
             COMMA_SEP + NOMBRE_CAMPO3 + TEXT_TYPE + " )";*/
 
     /*public static final String SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS " + TABLE_NAME1;*/
-    public static final String SQL_DELETE_ENTRIES1 = "DROP TABLE IF EXISTS " + TABLE_NAME2;
+    public static final String SQL_DELETE_AROMAS = "DROP TABLE IF EXISTS " + TABLE_NAME2;
 
     // Creo objeto de tipo DbHelper
  /*   private DbHelper mantenimientoDb;*/
