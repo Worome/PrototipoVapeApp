@@ -1,6 +1,7 @@
 package com.trianacodes.script.vapeapp.sqlite;
 
 import java.util.UUID;
+import com.trianacodes.script.vapeapp.sqlite.EstructuraTablas;
 
 public class EstructuraTablas {
 
@@ -18,7 +19,7 @@ public class EstructuraTablas {
     }
 
     // En esta clases creo un identidicador único
-    public static class Campos_Aromas implements com.trianacodes.script.vapeapp.sqlite.EstructuraTablas.CamposAromas{
+    public static class Campos_Aromas implements CamposAromas{
 
         public static String generarIdAroma(){
 
