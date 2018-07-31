@@ -1,10 +1,13 @@
 package com.trianacodes.script.vapeapp;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -29,6 +32,8 @@ public class AromasActivity extends AppCompatActivity {
     private SeekBar sbPorcentaje, sbMinMaceracion, sbMaxMaceracion;
     private TextView ePorcentaje, eMinMaceracion, eMaxMaceracion;
     private String controlVacio;
+    private final DbHelper AyudaDb = new DbHelper(this);
+    private Button Nuevo, Modificar, Eliminar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +47,11 @@ public class AromasActivity extends AppCompatActivity {
         eMinMaceracion = findViewById(R.id.etMinMaceracion);
         sbMaxMaceracion = findViewById(R.id.sbMaxMaceracion);
         eMaxMaceracion = findViewById(R.id.etMaxMaceracion);
+        Nuevo = findViewById(R.id.btnAnadir);
+        Modificar = findViewById(R.id.btnModificar);
+        Eliminar = findViewById(R.id.btnEliminar);
         Procesos();
+        controlBotones();
 
     }
 
@@ -305,5 +314,19 @@ public class AromasActivity extends AppCompatActivity {
 
     }
 
+    public void controlBotones(){
+
+        Nuevo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                SQLiteDatabase db = AyudaDb.getWritableDatabase();
+
+
+            }
+
+        });
+
+    }
 
 }

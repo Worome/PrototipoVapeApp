@@ -1,4 +1,4 @@
-package com.trianacodes.script.vapeapp;
+package com.trianacodes.script.vapeapp.sqlite;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -35,32 +35,26 @@ public class EstructuraBd {
     public static final String SQL_DELETE_ENTRIES1 = "DROP TABLE IF EXISTS " + TABLE_NAME2;
 
     // Creo objeto de tipo DbHelper
-    private DbHelper mantenimientoDb;
+ /*   private DbHelper mantenimientoDb;*/
     // Creo objeto de tipo SQLiteDatabase
-    private SQLiteDatabase db;
+    /*private SQLiteDatabase db;*/
 
     // Creo el constructor
-    private EstructuraBd(Context contexto){
+    private EstructuraBd(){
 
-        /* Por si hace falta  generar o modificar la estructura de la base de datos, creo una
+                /* Por si hace falta  generar o modificar la estructura de la base de datos, creo una
         instancia de la clase DbHelper pasándole como parámetro el contexto. Con ésto aún no se
         ejecuta la clase. */
 
-        mantenimientoDb = new DbHelper(contexto);
+        /*mantenimientoDb = new DbHelper(contexto);*/
 
         /* Ahora hay que llamar a la clase en la que se define la base de datos (DbHelper). Al
          * hacer esta llamada, si la base de datos existe, nos la devuelve en el modo en el que
          * nosotros le indiquemos (getWritableDatabase) y si no existe, la crea y luego nos la
          * devuelve*/
 
-        db = mantenimientoDb.getWritableDatabase();
+        /*db = mantenimientoDb.getWritableDatabase();*/
 
     }
-
-    /* Creo una función para generar el ContentValues en donde se almacenan los datos que luego se
-    guardan en la BD */
-
-    private ContentValues
-
 
 }
