@@ -61,6 +61,12 @@ public final class OperacionesBasesDeDatos {
 
     }
 
+    public SQLiteDatabase getDb(){
+
+        return baseDatos.getWritableDatabase();
+
+    }
+
     // Obtengo todos los registros de la tabla aromas
     public Cursor obtenerAromas(){
 

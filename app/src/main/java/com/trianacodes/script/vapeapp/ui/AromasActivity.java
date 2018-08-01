@@ -1,6 +1,7 @@
 package com.trianacodes.script.vapeapp.ui;
 
 import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -14,12 +15,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.trianacodes.script.vapeapp.R;
+import com.trianacodes.script.vapeapp.clases.Aromas;
 import com.trianacodes.script.vapeapp.sqlite.DbHelper;
+import com.trianacodes.script.vapeapp.sqlite.OperacionesBasesDeDatos;
 
 import static java.lang.Integer.parseInt;
 
-// TODO: Mejorar diseño Activity
-// TODO: Hacer diseño para tablets
 // TODO: Cambiar apariencia a los SeekBar
 // TODO: Hacer que al recibir el foco un EditText seleccione todo el texto
 /* Todo: Anotar en los apuntes de Android que para hacer que un componente de la interfaz no obtenga
@@ -37,6 +38,7 @@ public class AromasActivity extends AppCompatActivity {
     private String controlVacio;
     private final DbHelper AyudaDb = new DbHelper(this);
     private Button Nuevo, Modificar, Eliminar;
+    OperacionesBasesDeDatos operacionesDatos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,8 @@ public class AromasActivity extends AppCompatActivity {
         Nuevo = findViewById(R.id.btnAnadir);
         Modificar = findViewById(R.id.btnModificar);
         Eliminar = findViewById(R.id.btnEliminar);
+        // Obtengo una instancia de la base de datos
+        operacionesDatos = OperacionesBasesDeDatos.obtenerInstancia(getApplicationContext());
         Procesos();
         controlBotones();
 
@@ -71,9 +75,9 @@ public class AromasActivity extends AppCompatActivity {
             controlaSbMaximo();
              /*Llamo a la función que va a controlar si el contenido del EditText ha cambiado y si es
             así, cambio el valor del SeekBar.*/
-            controlaEdtPorcentaje();
+            /*controlaEdtPorcentaje();
             controlaEdtMinimo();
-            controlaEdtMaximo();
+            controlaEdtMaximo();*/
 
         } catch (Exception e) {
 
@@ -199,7 +203,7 @@ public class AromasActivity extends AppCompatActivity {
 
     }
 
-    public void controlaEdtPorcentaje(){
+    /*public void controlaEdtPorcentaje(){
 
         try {
 
@@ -315,7 +319,7 @@ public class AromasActivity extends AppCompatActivity {
 
         }
 
-    }
+    }*/
 
     public void controlBotones(){
 
@@ -323,12 +327,36 @@ public class AromasActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                SQLiteDatabase db = AyudaDb.getWritableDatabase();
+                // Ejecuto la tarea asíncrona de inserción de registro
+                new insertaAromas().execute();
 
 
             }
 
         });
+
+    }
+
+    // Creo tarea asíncrona de inserción de registro
+    public class insertaAromas extends AsyncTask<Void, Void, Void>{
+
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+
+            try {
+
+                operacionesDatos.getDb().beginTransaction();
+
+            } catch (Exception e){
+
+
+
+            }
+
+            return null;
+
+        }
 
     }
 
