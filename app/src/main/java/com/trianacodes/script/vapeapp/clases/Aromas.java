@@ -5,12 +5,12 @@ public class Aromas {
 
     /*Creo los argumentos con private para que no se pueda acceder a ellos nada más que desde
     esta clase.*/
-    public int Identificador, tiempoMinimoMaceracion, tiempoMaximoMaceracion, porcentajeRecomendado;
-    public String Tipo, Nombre, Marca;
+    public int tiempoMinimoMaceracion, tiempoMaximoMaceracion, porcentajeRecomendado;
+    public String Identificador, Tipo, Nombre, Marca;
 
 
     //Creo el constructor
-    public Aromas(int identificador, String Nombre, String Marca, String Tipo,
+    public Aromas(String identificador, String Nombre, String Marca, String Tipo,
                   int porcentajeRecomendado,int tiempoMinimoMaceracion, int tiempoMaximoMaceracion){
 
         // Inicializo las propiedades

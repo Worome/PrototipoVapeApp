@@ -8,7 +8,7 @@ public class EstructuraBd {
 
     /* Creo las constantes para definir el nombre de las tablas, de sus campos y las sentencias de
        creación y eliminación de tabalas. */
-    private static final String TABLE_NAME2 = "Aromas";
+    public static final String TABLE_NAME2 = "Aromas";
     private static final String NOMBRE_CAMPO21 = "Id";
     private static final String NOMBRE_CAMPO22 = "Nombre";
     private static final String NOMBRE_CAMPO23 = "Marca";

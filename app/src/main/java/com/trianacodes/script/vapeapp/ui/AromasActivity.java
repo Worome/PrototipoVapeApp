@@ -1,4 +1,4 @@
-package com.trianacodes.script.vapeapp;
+package com.trianacodes.script.vapeapp.ui;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.trianacodes.script.vapeapp.R;
 import com.trianacodes.script.vapeapp.sqlite.DbHelper;
 
 import static java.lang.Integer.parseInt;
