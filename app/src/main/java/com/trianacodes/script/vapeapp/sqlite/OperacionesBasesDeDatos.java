@@ -105,13 +105,13 @@ public final class OperacionesBasesDeDatos {
         /* Almaceno en cada campo del registro (Campos_Aromas.NOMBRE_AROMA, por ejemplo), el
         *  valor establecido por el usuario (aroma.Nombre) */
         valores.put(EstructuraTablas.Campos_Aromas.ID, idAroma);
-        valores.put(EstructuraTablas.Campos_Aromas.NOMBRE_AROMA, aroma.Nombre);
-        valores.put(EstructuraTablas.Campos_Aromas.MARCA_AROMA, aroma.Marca);
-        valores.put(EstructuraTablas.Campos_Aromas.TIPO_AROMA, aroma.Tipo);
+        valores.put(EstructuraTablas.Campos_Aromas.NOMBRE_AROMA, aroma.getNombre());
+        valores.put(EstructuraTablas.Campos_Aromas.MARCA_AROMA, aroma.getMarca());
+        valores.put(EstructuraTablas.Campos_Aromas.TIPO_AROMA, aroma.getTipo());
         valores.put(EstructuraTablas.Campos_Aromas.PORCENTAJE_RECOMENDADO,
-                aroma.porcentajeRecomendado);
-        valores.put(EstructuraTablas.Campos_Aromas.MINIMO_MACERACION, aroma.tiempoMinimoMaceracion);
-        valores.put(EstructuraTablas.Campos_Aromas.MAXIMO_MACERACION, aroma.tiempoMaximoMaceracion);
+                aroma.getPorcentajeRecomendado());
+        valores.put(EstructuraTablas.Campos_Aromas.MINIMO_MACERACION, aroma.getTiempoMaximoMaceracion());
+        valores.put(EstructuraTablas.Campos_Aromas.MAXIMO_MACERACION, aroma.getTiempoMaximoMaceracion());
         //Inserto el registro
         db.insertOrThrow(CONSULTA_AROMAS,null,valores);
         // Devuelvo el id generado;
@@ -124,13 +124,13 @@ public final class OperacionesBasesDeDatos {
 
         SQLiteDatabase db = baseDatos.getWritableDatabase();
         ContentValues valores = new ContentValues();
-        valores.put(EstructuraTablas.Campos_Aromas.NOMBRE_AROMA, aroma.Nombre);
-        valores.put(EstructuraTablas.Campos_Aromas.MARCA_AROMA, aroma.Marca);
-        valores.put(EstructuraTablas.Campos_Aromas.TIPO_AROMA, aroma.Tipo);
+        valores.put(EstructuraTablas.Campos_Aromas.NOMBRE_AROMA, aroma.getNombre());
+        valores.put(EstructuraTablas.Campos_Aromas.MARCA_AROMA, aroma.getMarca());
+        valores.put(EstructuraTablas.Campos_Aromas.TIPO_AROMA, aroma.getTipo());
         valores.put(EstructuraTablas.Campos_Aromas.PORCENTAJE_RECOMENDADO,
-                aroma.porcentajeRecomendado);
-        valores.put(EstructuraTablas.Campos_Aromas.MINIMO_MACERACION, aroma.tiempoMinimoMaceracion);
-        valores.put(EstructuraTablas.Campos_Aromas.MAXIMO_MACERACION, aroma.tiempoMaximoMaceracion);
+                aroma.getPorcentajeRecomendado());
+        valores.put(EstructuraTablas.Campos_Aromas.MINIMO_MACERACION, aroma.getTiempoMinimoMaceracion());
+        valores.put(EstructuraTablas.Campos_Aromas.MAXIMO_MACERACION, aroma.getTiempoMaximoMaceracion());
         // Defino la cláusula Where necesaria para modificar el registro concreto
         String where = String.format("%s=?", EstructuraTablas.Campos_Aromas.ID);
         // Establezco el valor por el que se tiene que hacer el WHERE

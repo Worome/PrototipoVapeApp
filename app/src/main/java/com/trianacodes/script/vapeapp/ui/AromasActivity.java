@@ -7,8 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -35,10 +37,12 @@ public class AromasActivity extends AppCompatActivity {
     private Spinner desplegable;
     private SeekBar sbPorcentaje, sbMinMaceracion, sbMaxMaceracion;
     private TextView ePorcentaje, eMinMaceracion, eMaxMaceracion;
+    private EditText eNombre, eMarca;
     private String controlVacio;
     private final DbHelper AyudaDb = new DbHelper(this);
     private Button Nuevo, Modificar, Eliminar;
     OperacionesBasesDeDatos operacionesDatos;
+    private Aromas aroma = new Aromas();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +50,8 @@ public class AromasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aromas);
 
+        eNombre = findViewById(R.id.etNombre);
+        eMarca = findViewById(R.id.etMarca);
         sbPorcentaje = findViewById(R.id.sbPorcentaje);
         ePorcentaje = findViewById(R.id.etPorcentaje);
         sbMinMaceracion = findViewById(R.id.sbMinMaceracion);
@@ -57,6 +63,8 @@ public class AromasActivity extends AppCompatActivity {
         Eliminar = findViewById(R.id.btnEliminar);
         // Obtengo una instancia de la base de datos
         operacionesDatos = OperacionesBasesDeDatos.obtenerInstancia(getApplicationContext());
+        /* Después del new llamo al constructor de la clase. Si este contructor tuviera que recibir
+        *  algún parámetro, se tendría que especificar dentro de los paréntesis.*/
         Procesos();
         controlBotones();
 
@@ -68,6 +76,7 @@ public class AromasActivity extends AppCompatActivity {
 
             //Llamo a la función que rellena de datos el desplegable
             rellenaDesplegable();
+            controlDesplegable();
             /*Llamo a la función que va a controlar si se cambia el valor del SeekBar y si es así,
             modificar el contenido del EditText correspondiente*/
             controlaSbPorcetaje();
@@ -103,6 +112,34 @@ public class AromasActivity extends AppCompatActivity {
 
     }
 
+    public void controlDesplegable(){
+
+        try {
+
+            desplegable.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+                @Override
+                public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                    aroma.setTipo(adapterView.getItemAtPosition(i).toString());
+
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> adapterView) {
+
+                }
+
+            });
+
+        } catch (Exception e) {
+
+            Toast.makeText(this,e.getMessage().toString(),Toast.LENGTH_LONG);
+
+        }
+
+    }
+
     public void controlaSbPorcetaje(){
         try {
 
@@ -132,7 +169,7 @@ public class AromasActivity extends AppCompatActivity {
 
         } catch (Exception e) {
 
-            Toast.makeText(this, "El error es: " + e, Toast.LENGTH_SHORT);
+            Toast.makeText(this, "El error es: " + e.getMessage().toString(), Toast.LENGTH_SHORT);
 
         }
 
@@ -169,7 +206,7 @@ public class AromasActivity extends AppCompatActivity {
 
         } catch (Exception e) {
 
-            Toast.makeText(this, "El error es: " + e, Toast.LENGTH_SHORT);
+            Toast.makeText(this, "El error es: " + e.getMessage().toString(), Toast.LENGTH_SHORT);
 
         }
 
@@ -326,7 +363,7 @@ public class AromasActivity extends AppCompatActivity {
         Nuevo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                estableceValores();
                 // Ejecuto la tarea asíncrona de inserción de registro
                 new insertaAromas().execute();
 
@@ -347,6 +384,7 @@ public class AromasActivity extends AppCompatActivity {
             try {
 
                 operacionesDatos.getDb().beginTransaction();
+                operacionesDatos.insertarAroma(aroma);
 
             } catch (Exception e){
 
@@ -357,6 +395,16 @@ public class AromasActivity extends AppCompatActivity {
             return null;
 
         }
+
+    }
+
+    public void estableceValores(){
+
+        aroma.setNombre(eNombre.getText().toString());
+        aroma.setMarca(eMarca.getText().toString());
+        aroma.setPorcentajeRecomendado(sbPorcentaje.getProgress());
+        aroma.setTiempoMinimoMaceracion(sbMinMaceracion.getProgress());
+        aroma.setTiempoMaximoMaceracion(sbMaxMaceracion.getProgress());
 
     }
 

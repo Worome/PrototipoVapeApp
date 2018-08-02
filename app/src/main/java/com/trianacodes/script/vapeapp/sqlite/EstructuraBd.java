@@ -22,7 +22,7 @@ public class EstructuraBd {
     private static final String COMMA_SEP = ",";
 
     public static final String SQL_CREATE_AROMAS = "CREATE TABLE " + TABLE_NAME2 +
-            " (" + NOMBRE_CAMPO21 + " INTEGER PRIMARY KEY autoincrement, " + NOMBRE_CAMPO22 + TEXT_TYPE +
+            " (" + NOMBRE_CAMPO21 + " TEXT PRIMARY KEY autoincrement, " + NOMBRE_CAMPO22 + TEXT_TYPE +
             COMMA_SEP + NOMBRE_CAMPO23 + TEXT_TYPE + COMMA_SEP + NOMBRE_CAMPO24 + TEXT_TYPE +
             COMMA_SEP + NOMBRE_CAMPO25 + INTEGER_TYPE + COMMA_SEP + NOMBRE_CAMPO26 + INTEGER_TYPE +
             COMMA_SEP + NOMBRE_CAMPO27 + INTEGER_TYPE + " )";
