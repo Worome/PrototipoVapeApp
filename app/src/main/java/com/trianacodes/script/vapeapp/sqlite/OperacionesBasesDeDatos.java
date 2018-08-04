@@ -16,7 +16,7 @@ import com.trianacodes.script.vapeapp.clases.Aromas;
 public final class OperacionesBasesDeDatos {
 
     private static DbHelper baseDatos;
-    private static OperacionesBasesDeDatos instancia;
+    private static OperacionesBasesDeDatos instancia = new OperacionesBasesDeDatos();
     // Creo una constante que contiene el nombre de la tabla sobre la que se va a hacer la consulta
     private static final String CONSULTA_AROMAS = "Aromas";
 
