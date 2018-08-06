@@ -1,11 +1,9 @@
 package com.trianacodes.script.vapeapp.ui;
 
-import android.database.sqlite.SQLiteDatabase;
+
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,23 +13,19 @@ import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.trianacodes.script.vapeapp.R;
 import com.trianacodes.script.vapeapp.clases.Aromas;
-import com.trianacodes.script.vapeapp.sqlite.DbHelper;
 import com.trianacodes.script.vapeapp.sqlite.OperacionesBasesDeDatos;
 
 import static java.lang.Integer.parseInt;
 
 // TODO: Cambiar apariencia a los SeekBar
 // TODO: Hacer que al recibir el foco un EditText seleccione todo el texto
-/* Todo: Anotar en los apuntes de Android que para hacer que un componente de la interfaz no obtenga
-         nunca el foco, hay que hacerlo desde el XML de la interfaz, en la etiqueta del elemento,
-         poniendo android:focusable = "false"*/
-/* Todo: Anotar en los apuntes de Android que para controlar si un EditText está vacío o no, se usa
-         el método isEmpty()*/
-/*Todo: Anotar en los apuntes que para cambiar de color un hint hay que usar la propiedad
-        android:textColorHint (android:textColorHint="@color/<nombre del color que he creado>"*/
+// Todo: Controlar que los EditText no estén vacíos al pulsar Añadir
+// Todo: Controlar que el valor de tiempo máximo de maceración sea mayor o igual tiempo mínimo de maceración
+/* Todo: Anotar en los apuntes de Android que para hacer que un componente de la interfaz no obtenga nunca el foco, hay que hacerlo desde el XML de la interfaz, en la etiqueta del elemento, poniendo android:focusable = "false"*/
+/* Todo: Anotar en los apuntes de Android que para controlar si un EditText está vacío o no, se usa el método isEmpty()*/
+/*Todo: Anotar en los apuntes que para cambiar de color un hint hay que usar la propiedad android:textColorHint (android:textColorHint="@color/<nombre del color que he creado>"*/
 public class AromasActivity extends AppCompatActivity {
 
     private Spinner desplegable;
@@ -39,7 +33,6 @@ public class AromasActivity extends AppCompatActivity {
     private TextView ePorcentaje, eMinMaceracion, eMaxMaceracion;
     private EditText eNombre, eMarca;
     private String controlVacio;
-    private final DbHelper AyudaDb = new DbHelper(this);
     private Button Nuevo, Modificar, Eliminar;
     OperacionesBasesDeDatos operacionesDatos;
     private Aromas aroma = new Aromas();
@@ -218,6 +211,12 @@ public class AromasActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar maximo, int i, boolean b) {
 
+               if (sbMinMaceracion.getProgress() > sbMaxMaceracion.getProgress()){
+
+                   Toast.makeText(getApplicationContext(),"El valor del Tiempo Máximo de maceración \n " +
+                           "ha de ser mayor que el tiempo mínimo de maceración",Toast.LENGTH_LONG);
+
+               }
                  /* Uso String.ValueOf para que el número almacenado en porcentaje.getProgress()
                 lo tome el EditText con formato texto, ya que los EditText sólo admiten contenido
                 de tipo String.*/
@@ -363,10 +362,18 @@ public class AromasActivity extends AppCompatActivity {
         Nuevo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                estableceValores();
-                // Ejecuto la tarea asíncrona de inserción de registro
-                new insertaAromas().execute();
 
+                estableceValores();
+                try{
+                    // Ejecuto la tarea asíncrona de inserción de registro
+                    new insertaAromas().execute();
+                } catch (Exception e){
+
+                    Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_LONG).show();
+
+                }
+
+                Toast.makeText(getApplicationContext(),aroma.getNombre(),Toast.LENGTH_LONG);
 
             }
 
@@ -377,18 +384,22 @@ public class AromasActivity extends AppCompatActivity {
     // Creo tarea asíncrona de inserción de registro
     public class insertaAromas extends AsyncTask<Void, Void, Void>{
 
+        public insertaAromas(){
+
+        }
 
         @Override
         protected Void doInBackground(Void... voids) {
 
             try {
 
+                Toast.makeText(getApplicationContext(),"doInBackground",Toast.LENGTH_LONG).show();
                 operacionesDatos.getDb().beginTransaction();
                 operacionesDatos.insertarAroma(aroma);
 
             } catch (Exception e){
 
-
+                Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_LONG).show();
 
             }
 

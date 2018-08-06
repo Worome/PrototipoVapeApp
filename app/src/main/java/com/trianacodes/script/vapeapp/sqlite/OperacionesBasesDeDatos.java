@@ -16,7 +16,7 @@ import com.trianacodes.script.vapeapp.clases.Aromas;
 public final class OperacionesBasesDeDatos {
 
     private static DbHelper baseDatos;
-    private static OperacionesBasesDeDatos instancia;
+    private static OperacionesBasesDeDatos instancia = new OperacionesBasesDeDatos();
     // Creo una constante que contiene el nombre de la tabla sobre la que se va a hacer la consulta
     private static final String CONSULTA_AROMAS = "Aromas";
 
@@ -32,18 +32,10 @@ public final class OperacionesBasesDeDatos {
        obliga a que dicha variable sea un array. En ella se establece el contenido del SELECT de
        la consulta, es decir los campos que se quieren mostrar en una consulta.*/
     private final String[] resultado = new String[]{
-            EstructuraBd.TABLE_NAME2 + "." + EstructuraTablas.Campos_Aromas.ID,
-            EstructuraTablas.Campos_Aromas.NOMBRE_AROMA, EstructuraTablas.Campos_Aromas.MARCA_AROMA,
-            EstructuraTablas.Campos_Aromas.TIPO_AROMA,
-            EstructuraTablas.Campos_Aromas.PORCENTAJE_RECOMENDADO,
-            EstructuraTablas.Campos_Aromas.MINIMO_MACERACION,
-            EstructuraTablas.Campos_Aromas.MAXIMO_MACERACION};
+            EstructuraBd.TABLA_AROMA + "." + EstructuraBd.AROMA_ID, EstructuraBd.AROMA_NOMBRE,
+            EstructuraBd.AROMA_MARCA, EstructuraBd.AROMA_TIPO, EstructuraBd.AROMA_PORCENTAJE,
+            EstructuraBd.AROMA_MIN_MACERACION, EstructuraBd.AROMA_MAX_MACERACION};
 
-            /*Tablas.CABECERA_PEDIDO + "." + CabecerasPedido.ID,
-            CabecerasPedido.FECHA,
-            Clientes.NOMBRES,
-            Clientes.APELLIDOS,
-            FormasPago.NOMBRE};*/
 
     private OperacionesBasesDeDatos(){
 
