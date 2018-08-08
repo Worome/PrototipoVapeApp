@@ -15,7 +15,7 @@ public class DbHelper extends SQLiteOpenHelper{
     /* Creo dos constantes*/
 
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "Db_Vapeapp";
+    private static final String DATABASE_NAME = "Db_Vapeapp.sqlite";
     private final Context contexto;
 
     public DbHelper(Context contextoActual){
@@ -40,6 +40,25 @@ public class DbHelper extends SQLiteOpenHelper{
 
         db.execSQL(EstructuraBd.SQL_DELETE_AROMAS);
         onCreate(db);
+
+    }
+
+    @Override
+    public void onOpen(SQLiteDatabase db) {
+        super.onOpen(db);
+        if (!db.isReadOnly()){
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN){
+
+                db.setForeignKeyConstraintsEnabled(true);
+
+            } else {
+
+                db.execSQL("PRAGMA foreing_keys=ON");
+
+            }
+
+        }
 
     }
 

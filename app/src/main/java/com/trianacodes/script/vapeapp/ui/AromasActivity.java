@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.trianacodes.script.vapeapp.R;
 import com.trianacodes.script.vapeapp.clases.Aromas;
+import com.trianacodes.script.vapeapp.sqlite.DbHelper;
 import com.trianacodes.script.vapeapp.sqlite.OperacionesBasesDeDatos;
 
 import static java.lang.Integer.parseInt;
@@ -35,6 +36,7 @@ public class AromasActivity extends AppCompatActivity {
     private String controlVacio;
     private Button Nuevo, Modificar, Eliminar;
     OperacionesBasesDeDatos operacionesDatos;
+    private DbHelper bd;
     private Aromas aroma = new Aromas();
 
     @Override
@@ -55,7 +57,7 @@ public class AromasActivity extends AppCompatActivity {
         Modificar = findViewById(R.id.btnModificar);
         Eliminar = findViewById(R.id.btnEliminar);
         // Obtengo una instancia de la base de datos
-        operacionesDatos = OperacionesBasesDeDatos.obtenerInstancia(getApplicationContext());
+        //operacionesDatos = OperacionesBasesDeDatos.obtenerInstancia(getApplicationContext());
         /* Después del new llamo al constructor de la clase. Si este contructor tuviera que recibir
         *  algún parámetro, se tendría que especificar dentro de los paréntesis.*/
         Procesos();
@@ -365,47 +367,21 @@ public class AromasActivity extends AppCompatActivity {
 
                 estableceValores();
                 try{
+
                     // Ejecuto la tarea asíncrona de inserción de registro
-                    new insertaAromas().execute();
+                    new inserta().execute();
+
                 } catch (Exception e){
 
                     Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_LONG).show();
 
                 }
 
-                Toast.makeText(getApplicationContext(),aroma.getNombre(),Toast.LENGTH_LONG);
+                Toast.makeText(getApplicationContext(),aroma.getNombre(),Toast.LENGTH_LONG).show();
 
             }
 
         });
-
-    }
-
-    // Creo tarea asíncrona de inserción de registro
-    public class insertaAromas extends AsyncTask<Void, Void, Void>{
-
-        public insertaAromas(){
-
-        }
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-
-            try {
-
-                Toast.makeText(getApplicationContext(),"doInBackground",Toast.LENGTH_LONG).show();
-                operacionesDatos.getDb().beginTransaction();
-                operacionesDatos.insertarAroma(aroma);
-
-            } catch (Exception e){
-
-                Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_LONG).show();
-
-            }
-
-            return null;
-
-        }
 
     }
 
@@ -419,4 +395,33 @@ public class AromasActivity extends AppCompatActivity {
 
     }
 
+    // Creo tarea asíncrona de inserción de registro
+    public class inserta extends AsyncTask<Void,Void,Void>{
+
+        @Override
+        protected Void doInBackground(Void... params) {
+
+           try{
+
+               operacionesDatos.getDb().beginTransaction();
+               operacionesDatos.insertarAroma(aroma);
+               operacionesDatos.getDb().setTransactionSuccessful();
+
+           } finally {
+
+               operacionesDatos.getDb().endTransaction();
+
+           }
+
+
+            return null;
+
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            Toast.makeText(getApplicationContext(),"Fin",Toast.LENGTH_LONG).show();
+        }
+    }
 }
