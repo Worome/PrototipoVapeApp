@@ -420,8 +420,12 @@ public class AromasActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Void aVoid) {
+
             super.onPostExecute(aVoid);
             Toast.makeText(getApplicationContext(),"Fin",Toast.LENGTH_LONG).show();
+
         }
+
     }
+
 }
