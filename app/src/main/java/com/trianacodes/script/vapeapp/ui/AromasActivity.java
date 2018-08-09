@@ -47,7 +47,6 @@ public class AromasActivity extends AppCompatActivity {
     OperacionesBasesDeDatos operacionesDatos;
     private DbHelper bd;
     private Aromas aroma = new Aromas();
-    private AlertDialog Alertas = new AlertDialog.Builder(this).create();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -329,18 +328,6 @@ public class AromasActivity extends AppCompatActivity {
         // Controlo que los campos Nombre y Marca no estén vacíos
         //if (eNombre.getText().toString().isEmpty()){
         if (eNombre.equals("")){
-
-            Alertas.setTitle("Campo Vacío");
-            Alertas.setMessage("El nombre del aroma no puede estar vacío");
-            Alertas.setButton(1,"OK", new DialogInterface.OnClickListener(){
-
-                public void onClick(DialogInterface dialog, int wich){
-
-                    return;
-
-                }
-
-            });
 
             //Toast.makeText(this,"El nombre del aroma no puede estar en blanco",Toast.LENGTH_LONG).show();
             eNombre.requestFocus(R.id.etNombre);
