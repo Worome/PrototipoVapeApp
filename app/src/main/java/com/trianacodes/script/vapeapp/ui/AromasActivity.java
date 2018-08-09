@@ -18,7 +18,9 @@ import com.trianacodes.script.vapeapp.clases.Aromas;
 import com.trianacodes.script.vapeapp.sqlite.DbHelper;
 import com.trianacodes.script.vapeapp.sqlite.OperacionesBasesDeDatos;
 
-import static java.lang.Integer.parseInt;
+//import java.lang.ref.WeakReference;
+
+//import static java.lang.Integer.parseInt;
 
 // TODO: Cambiar apariencia a los SeekBar
 // TODO: Hacer que al recibir el foco un EditText seleccione todo el texto
@@ -85,7 +87,7 @@ public class AromasActivity extends AppCompatActivity {
 
         } catch (Exception e) {
 
-            Toast.makeText(this, "Error " + e, Toast.LENGTH_SHORT);
+            Toast.makeText(this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
 
         }
 
@@ -129,7 +131,7 @@ public class AromasActivity extends AppCompatActivity {
 
         } catch (Exception e) {
 
-            Toast.makeText(this,e.getMessage().toString(),Toast.LENGTH_LONG);
+            Toast.makeText(this,"Error: " + e.getMessage(),Toast.LENGTH_LONG).show();
 
         }
 
@@ -164,7 +166,7 @@ public class AromasActivity extends AppCompatActivity {
 
         } catch (Exception e) {
 
-            Toast.makeText(this, "El error es: " + e.getMessage().toString(), Toast.LENGTH_SHORT);
+            Toast.makeText(this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
 
         }
 
@@ -201,7 +203,7 @@ public class AromasActivity extends AppCompatActivity {
 
         } catch (Exception e) {
 
-            Toast.makeText(this, "El error es: " + e.getMessage().toString(), Toast.LENGTH_SHORT);
+            Toast.makeText(this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
 
         }
 
@@ -216,7 +218,7 @@ public class AromasActivity extends AppCompatActivity {
                if (sbMinMaceracion.getProgress() > sbMaxMaceracion.getProgress()){
 
                    Toast.makeText(getApplicationContext(),"El valor del Tiempo Máximo de maceración \n " +
-                           "ha de ser mayor que el tiempo mínimo de maceración",Toast.LENGTH_LONG);
+                           "ha de ser mayor que el tiempo mínimo de maceración",Toast.LENGTH_LONG).show();
 
                }
                  /* Uso String.ValueOf para que el número almacenado en porcentaje.getProgress()
@@ -273,7 +275,7 @@ public class AromasActivity extends AppCompatActivity {
 
         } catch (Exception e){
 
-            Toast.makeText(this, "El error es: " + e, Toast.LENGTH_SHORT);
+            Toast.makeText(this, "El error es: " + e.getMessage(), Toast.LENGTH_SHORT).show();
 
         }
 
@@ -293,11 +295,9 @@ public class AromasActivity extends AppCompatActivity {
 
                 } catch (Exception e){
 
-                    Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Error: " + e.getMessage(),Toast.LENGTH_LONG).show();
 
                 }
-
-                Toast.makeText(getApplicationContext(),aroma.getNombre(),Toast.LENGTH_LONG).show();
 
             }
 
@@ -316,7 +316,12 @@ public class AromasActivity extends AppCompatActivity {
     }
 
     // Creo tarea asíncrona de inserción de registro
-    public class inserta extends AsyncTask<Void,Void,Void>{
+    private class inserta extends AsyncTask<Void,Void,Void>{
+
+        /*private WeakReference<AromasActivity> activityReference;
+        inserta(AromasActivity context) {
+            activityReference = new WeakReference<>(context);
+        }*/
 
         @Override
         protected Void doInBackground(Void... params) {
@@ -333,15 +338,20 @@ public class AromasActivity extends AppCompatActivity {
 
            }
 
-
             return null;
 
         }
 
         @Override
         protected void onPostExecute(Void aVoid) {
+
             super.onPostExecute(aVoid);
+            //AromasActivity activity = activityReference.get();
+            //if (activity == null || activity.isFinishing()) return;
             Toast.makeText(getApplicationContext(),"Fin",Toast.LENGTH_LONG).show();
+
         }
+
     }
+
 }
