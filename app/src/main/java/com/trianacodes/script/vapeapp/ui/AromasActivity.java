@@ -1,6 +1,7 @@
 package com.trianacodes.script.vapeapp.ui;
 
 
+import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,15 +19,20 @@ import com.trianacodes.script.vapeapp.clases.Aromas;
 import com.trianacodes.script.vapeapp.sqlite.DbHelper;
 import com.trianacodes.script.vapeapp.sqlite.OperacionesBasesDeDatos;
 
-import static java.lang.Integer.parseInt;
+//import static java.lang.Integer.parseInt;
 
 // TODO: Cambiar apariencia a los SeekBar
 // TODO: Hacer que al recibir el foco un EditText seleccione todo el texto
 // Todo: Controlar que los EditText no estén vacíos al pulsar Añadir
-// Todo: Controlar que el valor de tiempo máximo de maceración sea mayor o igual tiempo mínimo de maceración
+// Todo: Controlar que el valor de tiempo máximo de maceración sea mayor o igual al tiempo mínimo de maceración
 /* Todo: Anotar en los apuntes de Android que para hacer que un componente de la interfaz no obtenga nunca el foco, hay que hacerlo desde el XML de la interfaz, en la etiqueta del elemento, poniendo android:focusable = "false"*/
 /* Todo: Anotar en los apuntes de Android que para controlar si un EditText está vacío o no, se usa el método isEmpty()*/
-/*Todo: Anotar en los apuntes que para cambiar de color un hint hay que usar la propiedad android:textColorHint (android:textColorHint="@color/<nombre del color que he creado>"*/
+/* Todo: Anotar en los apuntes que para cambiar de color un hint hay que usar la propiedad android:textColorHint (android:textColorHint="@color/<nombre del color que he creado>"*/
+// Todo: Ver qué es Void dentro de un AsyncTask
+// Todo: Ver los contextos (Context)
+// Todo: Ver cómo solucionar este aviso: "Warning:(317, 18) This AsyncTask class should be static or leaks might occur (com.trianacodes.script.vapeapp.ui.AromasActivity.inserta)"
+// Todo: Controlar que ningún EditText quede en blanco cuando el usuario introduce datos.
+
 public class AromasActivity extends AppCompatActivity {
 
     private Spinner desplegable;
@@ -57,7 +63,7 @@ public class AromasActivity extends AppCompatActivity {
         Modificar = findViewById(R.id.btnModificar);
         Eliminar = findViewById(R.id.btnEliminar);
         // Obtengo una instancia de la base de datos
-        //operacionesDatos = OperacionesBasesDeDatos.obtenerInstancia(getApplicationContext());
+        operacionesDatos = OperacionesBasesDeDatos.obtenerInstancia(getApplicationContext());
         /* Después del new llamo al constructor de la clase. Si este contructor tuviera que recibir
         *  algún parámetro, se tendría que especificar dentro de los paréntesis.*/
         Procesos();
@@ -85,7 +91,7 @@ public class AromasActivity extends AppCompatActivity {
 
         } catch (Exception e) {
 
-            Toast.makeText(this, "Error " + e, Toast.LENGTH_SHORT);
+            Toast.makeText(this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
 
         }
 
@@ -129,7 +135,7 @@ public class AromasActivity extends AppCompatActivity {
 
         } catch (Exception e) {
 
-            Toast.makeText(this,e.getMessage().toString(),Toast.LENGTH_LONG);
+            Toast.makeText(this,"Error: " + e.getMessage(),Toast.LENGTH_LONG).show();
 
         }
 
@@ -164,7 +170,7 @@ public class AromasActivity extends AppCompatActivity {
 
         } catch (Exception e) {
 
-            Toast.makeText(this, "El error es: " + e.getMessage().toString(), Toast.LENGTH_SHORT);
+            Toast.makeText(this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
 
         }
 
@@ -201,7 +207,7 @@ public class AromasActivity extends AppCompatActivity {
 
         } catch (Exception e) {
 
-            Toast.makeText(this, "El error es: " + e.getMessage().toString(), Toast.LENGTH_SHORT);
+            Toast.makeText(this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
 
         }
 
@@ -216,9 +222,11 @@ public class AromasActivity extends AppCompatActivity {
                if (sbMinMaceracion.getProgress() > sbMaxMaceracion.getProgress()){
 
                    Toast.makeText(getApplicationContext(),"El valor del Tiempo Máximo de maceración \n " +
-                           "ha de ser mayor que el tiempo mínimo de maceración",Toast.LENGTH_LONG);
+                           "ha de ser mayor que el tiempo mínimo de maceración",Toast.LENGTH_LONG).show();
+                   //sbMinMaceracion.requestFocus();
 
                }
+
                  /* Uso String.ValueOf para que el número almacenado en porcentaje.getProgress()
                 lo tome el EditText con formato texto, ya que los EditText sólo admiten contenido
                 de tipo String.*/
@@ -273,87 +281,7 @@ public class AromasActivity extends AppCompatActivity {
 
         } catch (Exception e){
 
-            Toast.makeText(this, "El error es: " + e, Toast.LENGTH_SHORT);
-
-        }
-
-    }
-
-    public void controlaEdtMinimo(){
-
-        try {
-
-            eMinMaceracion.addTextChangedListener(new TextWatcher() {
-                @Override
-                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-                }
-
-                @Override
-                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-                   controlVacio = eMinMaceracion.getText().toString();
-                    if (controlVacio.isEmpty()){
-
-                        controlVacio = "0";
-
-                    }
-
-                    sbMinMaceracion.setProgress(parseInt(controlVacio));
-
-                }
-
-                @Override
-                public void afterTextChanged(Editable editable) {
-
-                }
-
-            });
-
-
-        } catch (Exception e) {
-
-            Toast.makeText(this, "El error es: " + e, Toast.LENGTH_SHORT);
-
-        }
-
-    }
-
-    public void controlaEdtMaximo(){
-
-        try{
-
-            eMaxMaceracion.addTextChangedListener(new TextWatcher() {
-                @Override
-                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-                }
-
-                @Override
-                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-                    controlVacio = eMaxMaceracion.getText().toString();
-                    if (controlVacio.isEmpty()){
-
-
-                        controlVacio = "0";
-
-                    }
-
-                    sbMaxMaceracion.setProgress(parseInt(controlVacio));
-
-                }
-
-                @Override
-                public void afterTextChanged(Editable editable) {
-
-                }
-
-            });
-
-        } catch (Exception e){
-
-            Toast.makeText(this, "El error es: " + e, Toast.LENGTH_SHORT);
+            Toast.makeText(this, "El error es: " + e.getMessage(), Toast.LENGTH_SHORT).show();
 
         }
 
@@ -370,14 +298,21 @@ public class AromasActivity extends AppCompatActivity {
 
                     // Ejecuto la tarea asíncrona de inserción de registro
                     new inserta().execute();
+                    // Inicializo los valores al pulsar el botón añadir
+                    eNombre.setText("");
+                    eMarca.setText("");
+                    desplegable.setSelection(0);
+                    sbPorcentaje.setProgress(0);
+                    sbMinMaceracion.setProgress(0);
+                    sbMaxMaceracion.setProgress(0);
+                    //eNombre.setNextFocusForwardId(R.id.etNombre);
+                    eNombre.requestFocus(R.id.etNombre);
 
                 } catch (Exception e){
 
-                    Toast.makeText(getApplicationContext(),"Error",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Error: " + e.getMessage(),Toast.LENGTH_LONG).show();
 
                 }
-
-                Toast.makeText(getApplicationContext(),aroma.getNombre(),Toast.LENGTH_LONG).show();
 
             }
 
@@ -387,16 +322,33 @@ public class AromasActivity extends AppCompatActivity {
 
     public void estableceValores(){
 
-        aroma.setNombre(eNombre.getText().toString());
+        // Controlo que los campos Nombre y Marca no estén vacíos
+        //if (eNombre.getText().toString().isEmpty()){
+        if (eNombre.equals("")){
+            Toast.makeText(this,"El nombre del aroma no puede estar en blanco",Toast.LENGTH_LONG).show();
+            eNombre.requestFocus(R.id.etNombre);
+
+        } else {
+
+            aroma.setNombre(eNombre.getText().toString());
+
+        }
+
         aroma.setMarca(eMarca.getText().toString());
         aroma.setPorcentajeRecomendado(sbPorcentaje.getProgress());
+        Toast.makeText(this," " + sbMinMaceracion.getProgress() + " " + sbMaxMaceracion.getProgress(),Toast.LENGTH_LONG).show();
         aroma.setTiempoMinimoMaceracion(sbMinMaceracion.getProgress());
         aroma.setTiempoMaximoMaceracion(sbMaxMaceracion.getProgress());
 
     }
 
     // Creo tarea asíncrona de inserción de registro
-    public class inserta extends AsyncTask<Void,Void,Void>{
+    private class inserta extends AsyncTask<Void,Void,Void>{
+
+        /*private WeakReference<AromasActivity> activityReference;
+        inserta(AromasActivity context) {
+            activityReference = new WeakReference<>(context);
+        }*/
 
         @Override
         protected Void doInBackground(Void... params) {
@@ -413,7 +365,6 @@ public class AromasActivity extends AppCompatActivity {
 
            }
 
-
             return null;
 
         }
@@ -422,7 +373,9 @@ public class AromasActivity extends AppCompatActivity {
         protected void onPostExecute(Void aVoid) {
 
             super.onPostExecute(aVoid);
-            Toast.makeText(getApplicationContext(),"Fin",Toast.LENGTH_LONG).show();
+            //AromasActivity activity = activityReference.get();
+            //if (activity == null || activity.isFinishing()) return;
+            Toast.makeText(getApplicationContext(),aroma.getNombre() + " de " + aroma.getMarca(),Toast.LENGTH_LONG).show();
 
         }
 
