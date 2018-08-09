@@ -23,7 +23,7 @@ public class EstructuraBd {
 
     // Constantes que contienen las sentencias de creación de las tablas
     public static final String SQL_CREATE_AROMAS = "CREATE TABLE " + TABLA_AROMA +
-            " (" + AROMA_ID + " TEXT PRIMARY KEY autoincrement, " + AROMA_NOMBRE + TEXT_TYPE +
+            " (" + AROMA_ID + " INTEGER PRIMARY KEY autoincrement, " + AROMA_NOMBRE + TEXT_TYPE +
             COMMA_SEP + AROMA_MARCA + TEXT_TYPE + COMMA_SEP + AROMA_TIPO + TEXT_TYPE +
             COMMA_SEP + AROMA_PORCENTAJE + INTEGER_TYPE + COMMA_SEP + AROMA_MIN_MACERACION + INTEGER_TYPE +
             COMMA_SEP + AROMA_MAX_MACERACION + INTEGER_TYPE + " )";

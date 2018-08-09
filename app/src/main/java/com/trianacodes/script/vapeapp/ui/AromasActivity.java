@@ -1,6 +1,7 @@
 package com.trianacodes.script.vapeapp.ui;
 
 
+import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,8 +19,6 @@ import com.trianacodes.script.vapeapp.clases.Aromas;
 import com.trianacodes.script.vapeapp.sqlite.DbHelper;
 import com.trianacodes.script.vapeapp.sqlite.OperacionesBasesDeDatos;
 
-//import java.lang.ref.WeakReference;
-
 //import static java.lang.Integer.parseInt;
 
 // TODO: Cambiar apariencia a los SeekBar
@@ -28,7 +27,12 @@ import com.trianacodes.script.vapeapp.sqlite.OperacionesBasesDeDatos;
 // Todo: Controlar que el valor de tiempo máximo de maceración sea mayor o igual tiempo mínimo de maceración
 /* Todo: Anotar en los apuntes de Android que para hacer que un componente de la interfaz no obtenga nunca el foco, hay que hacerlo desde el XML de la interfaz, en la etiqueta del elemento, poniendo android:focusable = "false"*/
 /* Todo: Anotar en los apuntes de Android que para controlar si un EditText está vacío o no, se usa el método isEmpty()*/
-/*Todo: Anotar en los apuntes que para cambiar de color un hint hay que usar la propiedad android:textColorHint (android:textColorHint="@color/<nombre del color que he creado>"*/
+/* Todo: Anotar en los apuntes que para cambiar de color un hint hay que usar la propiedad android:textColorHint (android:textColorHint="@color/<nombre del color que he creado>"*/
+// Todo: Ver qué es Void dentro de un AsyncTask
+// Todo: Ver los contextos (Context)
+// Todo: Ver cómo solucionar este aviso: "Warning:(317, 18) This AsyncTask class should be static or leaks might occur (com.trianacodes.script.vapeapp.ui.AromasActivity.inserta)"
+// Todo: Controlar que ningún EditText quede en blanco cuando el usuario introduce datos.
+// Todo: Ver porqué cuando se modifica el valor de un SeekBar, al grabarlo, no se refleja esa modificación.
 public class AromasActivity extends AppCompatActivity {
 
     private Spinner desplegable;
@@ -219,8 +223,10 @@ public class AromasActivity extends AppCompatActivity {
 
                    Toast.makeText(getApplicationContext(),"El valor del Tiempo Máximo de maceración \n " +
                            "ha de ser mayor que el tiempo mínimo de maceración",Toast.LENGTH_LONG).show();
+                   //sbMinMaceracion.requestFocus();
 
                }
+
                  /* Uso String.ValueOf para que el número almacenado en porcentaje.getProgress()
                 lo tome el EditText con formato texto, ya que los EditText sólo admiten contenido
                 de tipo String.*/
@@ -310,6 +316,7 @@ public class AromasActivity extends AppCompatActivity {
         aroma.setNombre(eNombre.getText().toString());
         aroma.setMarca(eMarca.getText().toString());
         aroma.setPorcentajeRecomendado(sbPorcentaje.getProgress());
+        Toast.makeText(this,eMinMaceracion.getText().toString(),Toast.LENGTH_LONG).show();
         aroma.setTiempoMinimoMaceracion(sbMinMaceracion.getProgress());
         aroma.setTiempoMaximoMaceracion(sbMaxMaceracion.getProgress());
 
@@ -348,7 +355,7 @@ public class AromasActivity extends AppCompatActivity {
             super.onPostExecute(aVoid);
             //AromasActivity activity = activityReference.get();
             //if (activity == null || activity.isFinishing()) return;
-            Toast.makeText(getApplicationContext(),"Fin",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),aroma.getNombre() + " de " + aroma.getMarca(),Toast.LENGTH_LONG).show();
 
         }
 
