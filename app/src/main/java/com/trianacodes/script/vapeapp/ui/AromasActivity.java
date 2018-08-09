@@ -2,8 +2,10 @@ package com.trianacodes.script.vapeapp.ui;
 
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -32,6 +34,7 @@ import com.trianacodes.script.vapeapp.sqlite.OperacionesBasesDeDatos;
 // Todo: Ver los contextos (Context)
 // Todo: Ver cómo solucionar este aviso: "Warning:(317, 18) This AsyncTask class should be static or leaks might occur (com.trianacodes.script.vapeapp.ui.AromasActivity.inserta)"
 // Todo: Controlar que ningún EditText quede en blanco cuando el usuario introduce datos.
+// Todo: insertar en la tabla Aromas un nuevo campo: Observaciones
 
 public class AromasActivity extends AppCompatActivity {
 
@@ -44,6 +47,7 @@ public class AromasActivity extends AppCompatActivity {
     OperacionesBasesDeDatos operacionesDatos;
     private DbHelper bd;
     private Aromas aroma = new Aromas();
+    private AlertDialog Alertas = new AlertDialog.Builder(this).create();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -293,6 +297,7 @@ public class AromasActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                compruebaCampos();
                 estableceValores();
                 try{
 
@@ -320,20 +325,36 @@ public class AromasActivity extends AppCompatActivity {
 
     }
 
-    public void estableceValores(){
-
+    public boolean compruebaCampos(){
         // Controlo que los campos Nombre y Marca no estén vacíos
         //if (eNombre.getText().toString().isEmpty()){
         if (eNombre.equals("")){
-            Toast.makeText(this,"El nombre del aroma no puede estar en blanco",Toast.LENGTH_LONG).show();
+
+            Alertas.setTitle("Campo Vacío");
+            Alertas.setMessage("El nombre del aroma no puede estar vacío");
+            Alertas.setButton(1,"OK", new DialogInterface.OnClickListener(){
+
+                public void onClick(DialogInterface dialog, int wich){
+
+                    return;
+
+                }
+
+            });
+
+            //Toast.makeText(this,"El nombre del aroma no puede estar en blanco",Toast.LENGTH_LONG).show();
             eNombre.requestFocus(R.id.etNombre);
-
-        } else {
-
-            aroma.setNombre(eNombre.getText().toString());
+            return false;
 
         }
 
+        return true;
+
+    }
+
+    public void estableceValores(){
+
+        aroma.setNombre(eNombre.getText().toString());
         aroma.setMarca(eMarca.getText().toString());
         aroma.setPorcentajeRecomendado(sbPorcentaje.getProgress());
         Toast.makeText(this," " + sbMinMaceracion.getProgress() + " " + sbMaxMaceracion.getProgress(),Toast.LENGTH_LONG).show();
