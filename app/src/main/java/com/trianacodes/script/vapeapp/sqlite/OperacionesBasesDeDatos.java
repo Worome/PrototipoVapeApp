@@ -101,7 +101,7 @@ public final class OperacionesBasesDeDatos {
         valores.put(EstructuraBd.AROMA_MARCA, aroma.getMarca());
         valores.put(EstructuraBd.AROMA_TIPO, aroma.getTipo());
         valores.put(EstructuraBd.AROMA_PORCENTAJE, aroma.getPorcentajeRecomendado());
-        valores.put(EstructuraBd.AROMA_MIN_MACERACION, aroma.getTiempoMaximoMaceracion());
+        valores.put(EstructuraBd.AROMA_MIN_MACERACION, aroma.getTiempoMinimoMaceracion());
         valores.put(EstructuraBd.AROMA_MAX_MACERACION, aroma.getTiempoMaximoMaceracion());
         //Inserto el registro
         db.insertOrThrow(EstructuraBd.TABLA_AROMA,null,valores);

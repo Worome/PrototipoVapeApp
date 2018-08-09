@@ -24,7 +24,7 @@ import com.trianacodes.script.vapeapp.sqlite.OperacionesBasesDeDatos;
 // TODO: Cambiar apariencia a los SeekBar
 // TODO: Hacer que al recibir el foco un EditText seleccione todo el texto
 // Todo: Controlar que los EditText no estén vacíos al pulsar Añadir
-// Todo: Controlar que el valor de tiempo máximo de maceración sea mayor o igual tiempo mínimo de maceración
+// Todo: Controlar que el valor de tiempo máximo de maceración sea mayor o igual al tiempo mínimo de maceración
 /* Todo: Anotar en los apuntes de Android que para hacer que un componente de la interfaz no obtenga nunca el foco, hay que hacerlo desde el XML de la interfaz, en la etiqueta del elemento, poniendo android:focusable = "false"*/
 /* Todo: Anotar en los apuntes de Android que para controlar si un EditText está vacío o no, se usa el método isEmpty()*/
 /* Todo: Anotar en los apuntes que para cambiar de color un hint hay que usar la propiedad android:textColorHint (android:textColorHint="@color/<nombre del color que he creado>"*/
@@ -32,7 +32,7 @@ import com.trianacodes.script.vapeapp.sqlite.OperacionesBasesDeDatos;
 // Todo: Ver los contextos (Context)
 // Todo: Ver cómo solucionar este aviso: "Warning:(317, 18) This AsyncTask class should be static or leaks might occur (com.trianacodes.script.vapeapp.ui.AromasActivity.inserta)"
 // Todo: Controlar que ningún EditText quede en blanco cuando el usuario introduce datos.
-// Todo: Ver porqué cuando se modifica el valor de un SeekBar, al grabarlo, no se refleja esa modificación.
+
 public class AromasActivity extends AppCompatActivity {
 
     private Spinner desplegable;
@@ -298,6 +298,15 @@ public class AromasActivity extends AppCompatActivity {
 
                     // Ejecuto la tarea asíncrona de inserción de registro
                     new inserta().execute();
+                    // Inicializo los valores al pulsar el botón añadir
+                    eNombre.setText("");
+                    eMarca.setText("");
+                    desplegable.setSelection(0);
+                    sbPorcentaje.setProgress(0);
+                    sbMinMaceracion.setProgress(0);
+                    sbMaxMaceracion.setProgress(0);
+                    //eNombre.setNextFocusForwardId(R.id.etNombre);
+                    eNombre.requestFocus(R.id.etNombre);
 
                 } catch (Exception e){
 
@@ -313,10 +322,21 @@ public class AromasActivity extends AppCompatActivity {
 
     public void estableceValores(){
 
-        aroma.setNombre(eNombre.getText().toString());
+        // Controlo que los campos Nombre y Marca no estén vacíos
+        //if (eNombre.getText().toString().isEmpty()){
+        if (eNombre.equals("")){
+            Toast.makeText(this,"El nombre del aroma no puede estar en blanco",Toast.LENGTH_LONG).show();
+            eNombre.requestFocus(R.id.etNombre);
+
+        } else {
+
+            aroma.setNombre(eNombre.getText().toString());
+
+        }
+
         aroma.setMarca(eMarca.getText().toString());
         aroma.setPorcentajeRecomendado(sbPorcentaje.getProgress());
-        Toast.makeText(this,eMinMaceracion.getText().toString(),Toast.LENGTH_LONG).show();
+        Toast.makeText(this," " + sbMinMaceracion.getProgress() + " " + sbMaxMaceracion.getProgress(),Toast.LENGTH_LONG).show();
         aroma.setTiempoMinimoMaceracion(sbMinMaceracion.getProgress());
         aroma.setTiempoMaximoMaceracion(sbMaxMaceracion.getProgress());
 
