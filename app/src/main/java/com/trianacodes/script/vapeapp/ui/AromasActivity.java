@@ -57,7 +57,7 @@ public class AromasActivity extends AppCompatActivity {
         Modificar = findViewById(R.id.btnModificar);
         Eliminar = findViewById(R.id.btnEliminar);
         // Obtengo una instancia de la base de datos
-        //operacionesDatos = OperacionesBasesDeDatos.obtenerInstancia(getApplicationContext());
+        operacionesDatos = OperacionesBasesDeDatos.obtenerInstancia(getApplicationContext());
         /* Después del new llamo al constructor de la clase. Si este contructor tuviera que recibir
         *  algún parámetro, se tendría que especificar dentro de los paréntesis.*/
         Procesos();
@@ -269,86 +269,6 @@ public class AromasActivity extends AppCompatActivity {
                 public void afterTextChanged(Editable editable) {
 
                 }
-            });
-
-        } catch (Exception e){
-
-            Toast.makeText(this, "El error es: " + e, Toast.LENGTH_SHORT);
-
-        }
-
-    }
-
-    public void controlaEdtMinimo(){
-
-        try {
-
-            eMinMaceracion.addTextChangedListener(new TextWatcher() {
-                @Override
-                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-                }
-
-                @Override
-                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-                   controlVacio = eMinMaceracion.getText().toString();
-                    if (controlVacio.isEmpty()){
-
-                        controlVacio = "0";
-
-                    }
-
-                    sbMinMaceracion.setProgress(parseInt(controlVacio));
-
-                }
-
-                @Override
-                public void afterTextChanged(Editable editable) {
-
-                }
-
-            });
-
-
-        } catch (Exception e) {
-
-            Toast.makeText(this, "El error es: " + e, Toast.LENGTH_SHORT);
-
-        }
-
-    }
-
-    public void controlaEdtMaximo(){
-
-        try{
-
-            eMaxMaceracion.addTextChangedListener(new TextWatcher() {
-                @Override
-                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-                }
-
-                @Override
-                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-                    controlVacio = eMaxMaceracion.getText().toString();
-                    if (controlVacio.isEmpty()){
-
-
-                        controlVacio = "0";
-
-                    }
-
-                    sbMaxMaceracion.setProgress(parseInt(controlVacio));
-
-                }
-
-                @Override
-                public void afterTextChanged(Editable editable) {
-
-                }
-
             });
 
         } catch (Exception e){
