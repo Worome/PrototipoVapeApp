@@ -14,7 +14,7 @@ public class DbHelper extends SQLiteOpenHelper{
 
     /* Creo dos constantes*/
 
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     private static final String DATABASE_NAME = "Db_Vapeapp.sqlite";
     private final Context contexto;
 
@@ -36,10 +36,16 @@ public class DbHelper extends SQLiteOpenHelper{
 
     // Aquí doy las instrucciones para actualizar la base de datos
     @Override
-    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+    public void onUpgrade(SQLiteDatabase db, int versionActual, int versionNueva) {
 
-        db.execSQL(EstructuraBd.SQL_DELETE_AROMAS);
-        onCreate(db);
+        if (versionActual == 1 && versionNueva == 2){
+
+            db.execSQL(EstructuraBd.ACTUALIZA_BASEDATOS_VERSION_2);
+
+        }
+
+        //db.execSQL(EstructuraBd.SQL_DELETE_AROMAS);
+        //onCreate(db);
 
     }
 

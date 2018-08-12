@@ -34,7 +34,7 @@ import com.trianacodes.script.vapeapp.sqlite.OperacionesBasesDeDatos;
 // Todo: Ver los contextos (Context)
 // Todo: Ver cómo solucionar este aviso: "Warning:(317, 18) This AsyncTask class should be static or leaks might occur (com.trianacodes.script.vapeapp.ui.AromasActivity.inserta)"
 // Todo: Controlar que ningún EditText quede en blanco cuando el usuario introduce datos.
-// Todo: insertar en la tabla Aromas un nuevo campo: Observaciones
+// Todo: Añadir en este Activity el campo Observaciones
 // Todo: ver qué hace un RecyclerView
 
 public class AromasActivity extends AppCompatActivity {

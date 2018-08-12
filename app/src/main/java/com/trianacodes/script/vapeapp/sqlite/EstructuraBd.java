@@ -15,6 +15,7 @@ public class EstructuraBd {
     public static final String AROMA_PORCENTAJE = "Porcentaje";
     public static final String AROMA_MIN_MACERACION = "MinMaceracion";
     public static final String AROMA_MAX_MACERACION = "MaxMaceracion";
+    public static final String AROMA_OBSERVACIONES = "Observaciones";
 
     // Constantes que contienen textos generales
     private static final String TEXT_TYPE = " TEXT";
@@ -30,6 +31,9 @@ public class EstructuraBd {
 
     // Constantes que contienen las sentencias de eliminación de tablas
     public static final String SQL_DELETE_AROMAS = "DROP TABLE IF EXISTS " + TABLA_AROMA;
+
+    public static final String ACTUALIZA_BASEDATOS_VERSION_2 = "ALTER TABLE " + TABLA_AROMA + " ADD COLUMN " +
+            AROMA_OBSERVACIONES + " TEXT";
 
     // Creo el constructor
     private EstructuraBd(){
