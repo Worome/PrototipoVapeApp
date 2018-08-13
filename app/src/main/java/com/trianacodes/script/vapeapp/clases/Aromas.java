@@ -6,7 +6,7 @@ public class Aromas {
     /*Creo los argumentos con private para que no se pueda acceder a ellos nada más que desde
     esta clase.*/
     private int tiempoMinimoMaceracion, tiempoMaximoMaceracion, porcentajeRecomendado;
-    private String Tipo, Nombre, Marca;
+    private String Tipo, Nombre, Marca, Observaciones;
     public String Identificador;
 
     /*Creo el constructor que tiene que ser public y en el que se tiene que dar los valores
@@ -21,6 +21,7 @@ public class Aromas {
         this.porcentajeRecomendado = 0;
         this.tiempoMinimoMaceracion = 0;
         this.tiempoMaximoMaceracion = 0;
+        this.Observaciones = "";
 
     }
 
@@ -113,4 +114,15 @@ public class Aromas {
 
     }
 
+    public void setObservaciones(String obs){
+
+        this.Observaciones = obs;
+
+    }
+
+    public String getObservaciones() {
+
+        return Observaciones;
+        
+    }
 }

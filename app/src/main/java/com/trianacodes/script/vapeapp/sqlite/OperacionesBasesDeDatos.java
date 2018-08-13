@@ -34,7 +34,8 @@ public final class OperacionesBasesDeDatos {
     private final String[] resultado = new String[]{
             EstructuraBd.TABLA_AROMA + "." + EstructuraBd.AROMA_ID, EstructuraBd.AROMA_NOMBRE,
             EstructuraBd.AROMA_MARCA, EstructuraBd.AROMA_TIPO, EstructuraBd.AROMA_PORCENTAJE,
-            EstructuraBd.AROMA_MIN_MACERACION, EstructuraBd.AROMA_MAX_MACERACION};
+            EstructuraBd.AROMA_MIN_MACERACION, EstructuraBd.AROMA_MAX_MACERACION,
+            EstructuraBd.AROMA_OBSERVACIONES};
 
 
     private OperacionesBasesDeDatos(){
@@ -103,6 +104,7 @@ public final class OperacionesBasesDeDatos {
         valores.put(EstructuraBd.AROMA_PORCENTAJE, aroma.getPorcentajeRecomendado());
         valores.put(EstructuraBd.AROMA_MIN_MACERACION, aroma.getTiempoMinimoMaceracion());
         valores.put(EstructuraBd.AROMA_MAX_MACERACION, aroma.getTiempoMaximoMaceracion());
+        valores.put(EstructuraBd.AROMA_OBSERVACIONES,aroma.getObservaciones());
         //Inserto el registro
         db.insertOrThrow(EstructuraBd.TABLA_AROMA,null,valores);
         // Devuelvo el id generado;
@@ -121,6 +123,7 @@ public final class OperacionesBasesDeDatos {
         valores.put(EstructuraBd.AROMA_PORCENTAJE, aroma.getPorcentajeRecomendado());
         valores.put(EstructuraBd.AROMA_MIN_MACERACION, aroma.getTiempoMaximoMaceracion());
         valores.put(EstructuraBd.AROMA_MAX_MACERACION, aroma.getTiempoMaximoMaceracion());
+        valores.put(EstructuraBd.AROMA_OBSERVACIONES,aroma.getObservaciones());
         // Defino la cláusula Where necesaria para modificar el registro concreto
         String where = String.format("%s=?", EstructuraBd.AROMA_ID);
         // Establezco el valor por el que se tiene que hacer el WHERE

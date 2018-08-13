@@ -27,14 +27,10 @@ import com.trianacodes.script.vapeapp.sqlite.OperacionesBasesDeDatos;
 // TODO: Hacer que al recibir el foco un EditText seleccione todo el texto
 // Todo: Controlar que los EditText no estén vacíos al pulsar Añadir
 // Todo: Controlar que el valor de tiempo máximo de maceración sea mayor o igual al tiempo mínimo de maceración
-/* Todo: Anotar en los apuntes de Android que para hacer que un componente de la interfaz no obtenga nunca el foco, hay que hacerlo desde el XML de la interfaz, en la etiqueta del elemento, poniendo android:focusable = "false"*/
-/* Todo: Anotar en los apuntes de Android que para controlar si un EditText está vacío o no, se usa el método isEmpty()*/
-/* Todo: Anotar en los apuntes que para cambiar de color un hint hay que usar la propiedad android:textColorHint (android:textColorHint="@color/<nombre del color que he creado>"*/
 // Todo: Ver qué es Void dentro de un AsyncTask
 // Todo: Ver los contextos (Context)
 // Todo: Ver cómo solucionar este aviso: "Warning:(317, 18) This AsyncTask class should be static or leaks might occur (com.trianacodes.script.vapeapp.ui.AromasActivity.inserta)"
 // Todo: Controlar que ningún EditText quede en blanco cuando el usuario introduce datos.
-// Todo: Añadir en este Activity el campo Observaciones
 // Todo: ver qué hace un RecyclerView
 
 public class AromasActivity extends AppCompatActivity {
@@ -42,7 +38,7 @@ public class AromasActivity extends AppCompatActivity {
     private Spinner desplegable;
     private SeekBar sbPorcentaje, sbMinMaceracion, sbMaxMaceracion;
     private TextView ePorcentaje, eMinMaceracion, eMaxMaceracion;
-    private EditText eNombre, eMarca;
+    private EditText eNombre, eMarca, eObservaciones;
     private String controlVacio;
     private Button Nuevo, Modificar, Eliminar;
     OperacionesBasesDeDatos operacionesDatos;
@@ -63,6 +59,7 @@ public class AromasActivity extends AppCompatActivity {
         eMinMaceracion = findViewById(R.id.etMinMaceracion);
         sbMaxMaceracion = findViewById(R.id.sbMaxMaceracion);
         eMaxMaceracion = findViewById(R.id.etMaxMaceracion);
+        eObservaciones = findViewById(R.id.etObservaciones);
         Nuevo = findViewById(R.id.btnAnadir);
         Modificar = findViewById(R.id.btnModificar);
         Eliminar = findViewById(R.id.btnEliminar);
@@ -310,6 +307,7 @@ public class AromasActivity extends AppCompatActivity {
                     sbPorcentaje.setProgress(0);
                     sbMinMaceracion.setProgress(0);
                     sbMaxMaceracion.setProgress(0);
+                    eObservaciones.setText("");
                     //eNombre.setNextFocusForwardId(R.id.etNombre);
                     eNombre.requestFocus(R.id.etNombre);
 
@@ -348,6 +346,7 @@ public class AromasActivity extends AppCompatActivity {
         Toast.makeText(this," " + sbMinMaceracion.getProgress() + " " + sbMaxMaceracion.getProgress(),Toast.LENGTH_LONG).show();
         aroma.setTiempoMinimoMaceracion(sbMinMaceracion.getProgress());
         aroma.setTiempoMaximoMaceracion(sbMaxMaceracion.getProgress());
+        aroma.setObservaciones(eObservaciones.getText().toString());
 
     }
 
