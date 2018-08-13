@@ -18,6 +18,8 @@
     <string name="Aromas_btnBorrar">Eliminar</string>
     <string name="Aromas_Valor_0">0</string>
     <string name="Aromas_Observaciones">Observaciones</string>
+    <string name="dialogo_mensaje">Mensaje</string>
+    <string name="dialogo_boton_aceptar">Aceptar</string>
     <string-array name="tipos">
 
         <item>Frutal</item>
