@@ -1,5 +1,7 @@
 package com.trianacodes.script.vapeapp.ui;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
@@ -22,18 +24,22 @@ public class CuadroDialogo extends DialogFragment {
 
     // El constructor que creo es obligatorio para los DialogFragment
     public CuadroDialogo() {
+
     }
 
     /*En los fragments siempre es necesario sobreescribir el método onCreateView*/
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-
+        /* Obtengo los datos del SharedPreference para montar el texto del cuadro de diálogo*/
+        SharedPreferences preferencias = getActivity().getSharedPreferences("Dialogos", Context.MODE_PRIVATE);
         // Creo una vista en la que voy a inflar el xml del cuadro personalizado
         View view = inflater.inflate(R.layout.cuadro_dialogo, container);
         TextView mensaje = view.findViewById(R.id.textView2);
         Button boton = view.findViewById(R.id.button2);
-        getDialog().setTitle("Nuevo título");
-        mensaje.setText("Este es un Nuevo mensaje de aviso para probar que \n el cuadro de diálogo funciona perfectamente");
+        getDialog().setTitle(preferencias.getString("Titulo","Aviso"));
+        mensaje.setText(preferencias.getString("Mensaje", "Mensaje sin definir"));
+        // Elimino el contenido del archivo SharedPreferences
+        preferencias.edit().clear().commit();
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
