@@ -25,7 +25,6 @@ import com.trianacodes.script.vapeapp.sqlite.OperacionesBasesDeDatos;
 
 //import static java.lang.Integer.parseInt;
 
-// TODO: Cambiar apariencia a los SeekBar
 // TODO: Hacer que al recibir el foco un EditText seleccione todo el texto
 // Todo: Ver qué es Void dentro de un AsyncTask
 // Todo: Ver los contextos (Context)
