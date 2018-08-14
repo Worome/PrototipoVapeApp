@@ -95,13 +95,14 @@
 
     <SeekBar
         android:id="@+id/sbPorcentaje"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="206dp"
+        android:layout_marginTop="202dp"
         android:max="100"
         android:progress="0"
+        android:progressDrawable="@drawable/seekbar_progress"
+        android:thumb="@drawable/seekbar_thumb"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -130,13 +131,14 @@
 
     <SeekBar
         android:id="@+id/sbMinMaceracion"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="@dimen/SeekBar"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="255dp"
         android:max="8"
         android:progress="0"
+        android:progressDrawable="@drawable/seekbar_progress"
+        android:thumb="@drawable/seekbar_thumb"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -185,13 +187,14 @@
 
     <SeekBar
         android:id="@+id/sbMaxMaceracion"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="@dimen/SeekBar"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="315dp"
         android:max="8"
         android:progress="0"
+        android:progressDrawable="@drawable/seekbar_progress"
+        android:thumb="@drawable/seekbar_thumb"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -245,6 +248,7 @@
         android:layout_marginTop="375dp"
         android:ems="10"
         android:inputType="textMultiLine"
+        android:hint="@string/Aromas_Observaciones"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
