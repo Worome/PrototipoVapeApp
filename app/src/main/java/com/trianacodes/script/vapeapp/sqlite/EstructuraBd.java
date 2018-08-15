@@ -22,16 +22,20 @@ public class EstructuraBd {
     private static final String INTEGER_TYPE = " INTEGER";
     private static final String COMMA_SEP = ",";
 
-    // Constantes que contienen las sentencias de creación de las tablas
+    /* Constantes que contienen las sentencias de creación de las tablas (Cada vez que añada, borre
+     o modificar un campo de una tabla debo añadir aquí el cambio como he hecho añadiendo el campo
+    AROMA_OBSERVACIONES. Esto es para que si la base de datos se crea nueva, vaya con todas las
+    modificaciones hechas)*/
     public static final String SQL_CREATE_AROMAS = "CREATE TABLE " + TABLA_AROMA +
             " (" + AROMA_ID + " INTEGER PRIMARY KEY autoincrement, " + AROMA_NOMBRE + TEXT_TYPE +
             COMMA_SEP + AROMA_MARCA + TEXT_TYPE + COMMA_SEP + AROMA_TIPO + TEXT_TYPE +
             COMMA_SEP + AROMA_PORCENTAJE + INTEGER_TYPE + COMMA_SEP + AROMA_MIN_MACERACION + INTEGER_TYPE +
-            COMMA_SEP + AROMA_MAX_MACERACION + INTEGER_TYPE + " )";
+            COMMA_SEP + AROMA_MAX_MACERACION + INTEGER_TYPE + COMMA_SEP + AROMA_OBSERVACIONES + TEXT_TYPE + " )";
 
     // Constantes que contienen las sentencias de eliminación de tablas
     public static final String SQL_DELETE_AROMAS = "DROP TABLE IF EXISTS " + TABLA_AROMA;
 
+    /* Las actualizaciones de bases de datos siempre deben ir como esta instrucción de abajo */
     public static final String ACTUALIZA_BASEDATOS_VERSION_2 = "ALTER TABLE " + TABLA_AROMA + " ADD COLUMN " +
             AROMA_OBSERVACIONES + " TEXT";
 

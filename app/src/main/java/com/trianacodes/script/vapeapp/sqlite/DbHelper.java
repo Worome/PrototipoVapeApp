@@ -12,7 +12,8 @@ import android.os.Build;
 
 public class DbHelper extends SQLiteOpenHelper{
 
-    /* Creo dos constantes*/
+    /* Creo dos constantes. Cuando haya actualziaciones en alguna tabla de la base de datos, tengo
+    * que sumar 1 al valore de la constante DATABASE_VERSION.*/
 
     private static final int DATABASE_VERSION = 2;
     private static final String DATABASE_NAME = "Db_Vapeapp.sqlite";
@@ -38,11 +39,20 @@ public class DbHelper extends SQLiteOpenHelper{
     @Override
     public void onUpgrade(SQLiteDatabase db, int versionActual, int versionNueva) {
 
-        if (versionActual == 1 && versionNueva == 2){
+       /* if (versionActual == 1 && versionNueva == 2){
 
             db.execSQL(EstructuraBd.ACTUALIZA_BASEDATOS_VERSION_2);
 
-        }
+        }*/
+       /* Cuando hay una nueva versión de la base de datos, siempre hay que preguntar si la
+       * version Actual es menor que la versión nueva; y si es así, hay que ejecutar la sentencia
+        * de actualziación. Por cada nueva versión hay que preguntar con nuevos if y ejecutar la
+        * actualización dejando los antiguos. No se puede borrar ninguno. */
+       if (versionActual < 2){
+
+           db.execSQL(EstructuraBd.ACTUALIZA_BASEDATOS_VERSION_2);
+
+       }
 
         //db.execSQL(EstructuraBd.SQL_DELETE_AROMAS);
         //onCreate(db);

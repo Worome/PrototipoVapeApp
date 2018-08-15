@@ -9,36 +9,12 @@
     tools:layout_editor_absoluteY="25dp">
 
     <TextView
-        android:id="@+id/txtId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="120dp"
-        android:text="@string/Aromas_Id"
-        android:textSize="@dimen/Literales"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/txtIdValor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="120dp"
-        android:ems="10"
-        android:text="@string/Aromas_HintId"
-        android:textSize="@dimen/Literales"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/txtNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="190dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="60dp"
         android:text="@string/Aromas_Nombre"
-        android:textSize="@dimen/Literales"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,8 +22,8 @@
         android:id="@+id/etNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="45dp"
         android:ems="10"
         android:hint="@string/Aromas_HintNombre"
         android:inputType="textPersonName"
@@ -58,10 +34,9 @@
         android:id="@+id/txtMarca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="260dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="110dp"
         android:text="@string/Aromas_Marca"
-        android:textSize="@dimen/Literales"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -69,8 +44,8 @@
         android:id="@+id/etMarca"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="95dp"
         android:ems="10"
         android:hint="@string/Aromas_HintMarca"
         android:inputType="textPersonName"
@@ -81,10 +56,9 @@
         android:id="@+id/txtTipo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="330dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="160dp"
         android:text="@string/Aromas_Tipo"
-        android:textSize="@dimen/Literales"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -92,8 +66,8 @@
         android:id="@+id/spTipo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="330dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="145dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -101,35 +75,34 @@
         android:id="@+id/txtPorcentaje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="210dp"
         android:text="@string/Aromas_Porcentaje"
-        android:textSize="@dimen/Literales"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/etPorcentaje"
-        android:layout_width="50dp"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="350dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginStart="187dp"
+        android:layout_marginTop="210dp"
         android:ems="10"
         android:gravity="end"
         android:text="@string/Aromas_Valor_0"
-        android:textSize="@dimen/Literales"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <SeekBar
         android:id="@+id/sbPorcentaje"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="@dimen/SeekBar"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="400dp"
+        android:layout_width="450dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="202dp"
         android:max="100"
         android:progress="0"
+        android:progressDrawable="@drawable/seekbar_progress"
+        android:thumb="@drawable/seekbar_thumb"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -137,36 +110,35 @@
         android:id="@+id/txtMinMaceracion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="470dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="260dp"
         android:text="@string/Aromas_MinMaceracion"
-        android:textSize="@dimen/Literales"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/etMinMaceracion"
-        android:layout_width="50dp"
+        android:layout_width="62dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="350dp"
-        android:layout_marginTop="470dp"
+        android:layout_marginStart="185dp"
+        android:layout_marginTop="260dp"
         android:ems="10"
         android:gravity="end"
         android:hint="@string/Aromas_HintMinMaceracion"
         android:text="@string/Aromas_Valor_0"
-        android:textSize="@dimen/Literales"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <SeekBar
         android:id="@+id/sbMinMaceracion"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="@dimen/SeekBar"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="470dp"
+        android:layout_width="450dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="255dp"
         android:max="8"
         android:progress="0"
+        android:progressDrawable="@drawable/seekbar_progress"
+        android:thumb="@drawable/seekbar_thumb"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -174,10 +146,9 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="125dp"
-        android:layout_marginTop="495dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="275dp"
         android:text="@string/Aromas_Semanas"
-        android:textSize="@dimen/Literales"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -185,10 +156,9 @@
         android:id="@+id/txtMaxMaceracion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="565dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="325dp"
         android:text="@string/Aromas_MaxMaceracion"
-        android:textSize="@dimen/Literales"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -196,36 +166,35 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="125dp"
-        android:layout_marginTop="590dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="340dp"
         android:text="@string/Aromas_Semanas"
-        android:textSize="@dimen/Literales"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/etMaxMaceracion"
-        android:layout_width="50dp"
+        android:layout_width="@dimen/Numeros"
         android:layout_height="wrap_content"
-        android:layout_marginStart="350dp"
-        android:layout_marginTop="565dp"
+        android:layout_marginStart="197dp"
+        android:layout_marginTop="325dp"
         android:ems="10"
         android:gravity="end"
         android:hint="@string/Aromas_HintMinMaceracion"
         android:text="@string/Aromas_Valor_0"
-        android:textSize="@dimen/Literales"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <SeekBar
         android:id="@+id/sbMaxMaceracion"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="@dimen/SeekBar"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="565dp"
+        android:layout_width="450dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="315dp"
         android:max="8"
         android:progress="0"
+        android:progressDrawable="@drawable/seekbar_progress"
+        android:thumb="@drawable/seekbar_thumb"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -234,7 +203,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="8dp"
         android:text="@string/Aromas_btnAnadir"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -256,9 +225,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/Aromas_btnBorrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/txtObservaciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="390dp"
+        android:text="@string/Aromas_Observaciones"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etObservaciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="375dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:hint="@string/Aromas_Observaciones"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
