@@ -20,7 +20,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="20"
-                android:drawableBottom="@drawable/aromas1"
+                android:drawableBottom="@drawable/aromas"
                 android:text="@string/boton_inicio_aromas"
                 android:textColor="@color/Verde3"
                 android:textSize="@dimen/tamano_letra_botones_inicio"
