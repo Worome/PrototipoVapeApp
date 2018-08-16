@@ -28,6 +28,9 @@
     <string name="marca_blanco">La marca del aroma no puede estar en blanco.</string>
     <string name="boton_inicio_aromas">AROMAS</string>
     <string name="boton_inicio_calculadora">CALCULADORA</string>
+    <string name="boton_inicio_liquidos_almacenados">LIQUIDOS ALMACENADOS</string>
+    <string name="boton_inicio_recetas">RECETAS</string>
+    <string name="boton_inicio_gastos">GASTOS</string>
     <string-array name="tipos">
 
         <item>Frutal</item>

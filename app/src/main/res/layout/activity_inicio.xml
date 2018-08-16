@@ -19,35 +19,68 @@
                 android:id="@+id/btnAromas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
+                android:layout_weight="20"
                 android:drawableBottom="@drawable/aromas1"
                 android:text="@string/boton_inicio_aromas"
                 android:textColor="@color/Verde3"
-                android:textSize="50sp"
+                android:textSize="@dimen/tamano_letra_botones_inicio"
                 android:textStyle="bold" />
 
             <Button
                 android:id="@+id/btnCalculadora"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="50"
+                android:layout_weight="20"
                 android:drawableBottom="@drawable/calculadora"
                 android:text="@string/boton_inicio_calculadora"
                 android:textColor="@color/Verde3"
-                android:textSize="50sp" />
+                android:textSize="@dimen/tamano_letra_botones_inicio"
+                android:textStyle="bold" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/btnMisLiquidos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="20"
+                android:drawableBottom="@drawable/almacenamiento"
+                android:text="@string/boton_inicio_liquidos_almacenados"
+                android:textColor="@color/Verde3"
+                android:textSize="@dimen/tamano_letra_botones_inicio"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnRecetas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="20"
+                android:drawableBottom="@drawable/recetas"
+                android:text="@string/boton_inicio_recetas"
+                android:textColor="@color/Verde3"
+                android:textSize="@dimen/tamano_letra_botones_inicio"
+                android:textStyle="bold" />
+        </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent" >
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            <Button
+                android:id="@+id/btnGastos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="20"
+                android:drawableBottom="@drawable/gastos"
+                android:text="@string/boton_inicio_gastos"
+                android:textColor="@color/Verde3"
+                android:textSize="@dimen/tamano_letra_botones_inicio"
+                android:textStyle="bold" />
+        </TableRow>
+
     </TableLayout>
 
 </android.support.constraint.ConstraintLayout>
