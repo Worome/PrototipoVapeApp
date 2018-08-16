@@ -6,13 +6,48 @@
     android:layout_height="match_parent"
     tools:context=".ui.Inicio">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="100">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btnAromas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:drawableBottom="@drawable/aromas1"
+                android:text="@string/boton_inicio_aromas"
+                android:textColor="@color/Verde3"
+                android:textSize="50sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnCalculadora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:drawableBottom="@drawable/calculadora"
+                android:text="@string/boton_inicio_calculadora"
+                android:textColor="@color/Verde3"
+                android:textSize="50sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </TableLayout>
 
 </android.support.constraint.ConstraintLayout>
