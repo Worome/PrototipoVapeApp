@@ -123,13 +123,18 @@ public class AromasActivity extends AppCompatActivity {
 
         /*He definido dentro de strings.xml un string-array llamado "tipos", con todos los tipos de
          * aromas. Ahora,, en esta línea creo un adaptador de tipo ArrayAdapter para luego rellenar
-         * la lista desplegable (Spinner)*/
+         * la lista desplegable (Spinner). Para darle formato (tamaño de la letra, color, etc...) a
+         la caja de texto he creado un nuevo layout en donde defino todo esto (spinner_personalizado)
+         y es el que asigno al ArrayAdapter*/
         ArrayAdapter tipos = ArrayAdapter.createFromResource(this, R.array.tipos,
-                android.R.layout.simple_spinner_dropdown_item);
+                R.layout.spinner_personalizado);
         // Asigno el desplegable de la interfaz al objeto de tipo Spinner que he creado (desplegable)
         desplegable = findViewById(R.id.spTipo);
-        // Establezco el tipo de lista del adaptador
-        tipos.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        /* Establezco el tipo de lista del adaptador. Como quiero qeu el tamaño de letra del
+        desplegable sea otro he creado otro layout (dropdown_spinner_personalizado) en el que defino
+        las características (tamaño, padding, color, etc.) y es el que asigno en el
+        setDropDownViewResource */
+        tipos.setDropDownViewResource(R.layout.dropdown_spinner_personalizado);
         // Le asigno al objeto de tipo Spinner el adaptador que he construido
         desplegable.setAdapter(tipos);
 
