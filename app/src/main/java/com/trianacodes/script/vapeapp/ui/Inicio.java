@@ -23,25 +23,17 @@ public class Inicio extends AppCompatActivity {
         almacen = findViewById(R.id.ibAlmacen);
         recetas = findViewById(R.id.ibRecetas);
         gastos = findViewById(R.id.ibGastos);
-        calculadora.setOnClickListener(new View.OnClickListener() {
+
+        lanzaActividades();
+        /*calculadora.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
             }
 
-        });
+        });*/
 
-        aromas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent llamaAromas = new Intent(Inicio.this, Aromas.class);
-
-            }
-
-        });
-
-        almacen.setOnClickListener(new View.OnClickListener() {
+        /*almacen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -63,7 +55,22 @@ public class Inicio extends AppCompatActivity {
 
             }
 
+        });*/
+
+    }
+    public void lanzaActividades(){
+
+        aromas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent llamaAromas = new Intent(getApplicationContext(), AromasActivity.class);
+                startActivity(llamaAromas);
+
+            }
+
         });
 
     }
+
 }

@@ -8,11 +8,4 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="botones_inicio">
-        <item name="android:padding">@dimen/padd</item>
-        <item name="android:textSize">@dimen/tamano_letra_botones_inicio</item>
-        <item name="android:textColor">@color/Verde3</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-
 </resources>

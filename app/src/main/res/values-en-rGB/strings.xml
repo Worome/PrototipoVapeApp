@@ -29,5 +29,15 @@
     <string name="Aromas_MinMaceracion">Minimum maceration time</string>
     <string name="Aromas_MaxMaceracion">Maximum maceration time</string>
     <string name="Aromas_Valor_0">0</string>
+    <string name="dialogo_mensaje">Message</string>
+    <string name="dialogo_boton_aceptar">OK</string>
+    <string name="Errores">Error</string>
+    <string name="aviso">Warning!</string>
+    <string name="Aromas_Observaciones">Remarks</string>
+    <string name="mensaje_error">The following error has occurred:</string>
+    <string name="mensaje_maceracion">The value of the Maximum Time of maceration must be greater than the minimum time of maceration</string>
+    <string name="nombre_blanco">The name of the aroma can not be blank</string>
+    <string name="marca_blanco">The aroma brand can not be blank.</string>
+    <string name="descripcion_botones_inicio">Start activity buttons</string>
 
 </resources>

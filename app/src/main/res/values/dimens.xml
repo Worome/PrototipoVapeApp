@@ -6,4 +6,5 @@
     <dimen name="padd">8dp</dimen>
     <dimen name="aromas_literales_xxx">25sp</dimen>
     <dimen name="aromas_EditText_xxx">450dp</dimen>
+    <dimen name="tamano_botones_inicio">150dp</dimen>
 </resources>

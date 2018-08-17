@@ -26,11 +26,8 @@
     <string name="mensaje_maceracion">El valor del Tiempo Máximo de maceración ha de ser mayor que el tiempo mínimo de maceración</string>
     <string name="nombre_blanco">El nombre del aroma no puede estar en blanco</string>
     <string name="marca_blanco">La marca del aroma no puede estar en blanco.</string>
-    <string name="boton_inicio_aromas">AROMAS</string>
-    <string name="boton_inicio_calculadora">CALCULADORA</string>
-    <string name="boton_inicio_liquidos_almacenados">LIQUIDOS ALMACENADOS</string>
-    <string name="boton_inicio_recetas">RECETAS</string>
-    <string name="boton_inicio_gastos">GASTOS</string>
+    <string name="descripcion_botones_inicio">Botones del activity de inicio</string>
+
     <string-array name="tipos">
 
         <item>Frutal</item>
