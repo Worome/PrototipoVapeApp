@@ -8,8 +8,8 @@
 
     <ImageButton
         android:id="@+id/ibCalculadora"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="@dimen/tamano_botones_inicio"
+        android:layout_height="@dimen/tamano_botones_inicio"
         android:layout_marginStart="32dp"
         android:layout_marginTop="64dp"
         android:background="@drawable/calculadora"
@@ -19,8 +19,8 @@
 
     <ImageButton
         android:id="@+id/ibAromas"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="@dimen/tamano_botones_inicio"
+        android:layout_height="@dimen/tamano_botones_inicio"
         android:layout_marginEnd="32dp"
         android:layout_marginTop="64dp"
         android:background="@drawable/aromas"
@@ -30,8 +30,8 @@
 
     <ImageButton
         android:id="@+id/ibAlmacen"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="@dimen/tamano_botones_inicio"
+        android:layout_height="@dimen/tamano_botones_inicio"
         android:layout_marginStart="32dp"
         android:layout_marginTop="430dp"
         android:background="@drawable/almacenamiento"
@@ -41,8 +41,8 @@
 
     <ImageButton
         android:id="@+id/ibRecetas"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="@dimen/tamano_botones_inicio"
+        android:layout_height="@dimen/tamano_botones_inicio"
         android:layout_marginEnd="32dp"
         android:layout_marginTop="430dp"
         android:background="@drawable/recetas"
@@ -52,15 +52,14 @@
 
     <ImageButton
         android:id="@+id/ibGastos"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="@dimen/tamano_botones_inicio"
+        android:layout_height="@dimen/tamano_botones_inicio"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="200dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="796dp"
         android:background="@drawable/gastos"
         android:contentDescription="@string/descripcion_botones_inicio"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.166"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
