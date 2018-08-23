@@ -4,7 +4,7 @@
     <dimen name="Numeros">50dp</dimen>
     <dimen name="Literales">14sp</dimen>
     <dimen name="padd">8dp</dimen>
-    <dimen name="aromas_literales_xxx">25sp</dimen>
-    <dimen name="aromas_EditText_xxx">450dp</dimen>
     <dimen name="tamano_botones_inicio">50dp</dimen>
 </resources>
+<!--     <dimen name="aromas_literales_xxx">25sp</dimen>
+    <dimen name="aromas_EditText_xxx">450dp</dimen> -->
