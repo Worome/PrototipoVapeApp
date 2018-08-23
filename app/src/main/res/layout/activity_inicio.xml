@@ -59,7 +59,7 @@
 
     <ImageButton
         android:id="@+id/ibRecetas"
-        android:layout_width="124dp"
+        android:layout_width="@dimen/tamano_botones_inicio"
         android:layout_height="@dimen/tamano_botones_inicio"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="16dp"
