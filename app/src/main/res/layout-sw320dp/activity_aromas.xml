@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:text="@string/Aromas_Nombre"
+        android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/etNombre"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -22,12 +23,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="45dp"
         android:ems="10"
         android:hint="@string/Aromas_HintNombre"
         android:inputType="textPersonName"
         android:textSize="@dimen/Literales"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtNombre"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -154,6 +157,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:text="@string/Aromas_MaxMaceracion"
+        android:textSize="@dimen/Literales"
+        android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/etMaxMaceracion"
         app:layout_constraintStart_toStartOf="parent" />
 
