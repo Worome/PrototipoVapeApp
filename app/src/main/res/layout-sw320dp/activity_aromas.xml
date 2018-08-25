@@ -240,12 +240,13 @@
     <EditText
         android:id="@+id/etObservaciones"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="375dp"
         android:ems="10"
         android:hint="@string/Aromas_Observaciones"
         android:inputType="textMultiLine"
+        android:scrollbars="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
