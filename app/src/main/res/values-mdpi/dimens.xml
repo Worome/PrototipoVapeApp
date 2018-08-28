@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="tamano_botones_inicio">175dp</dimen>
-    <dimen name="Literales">6sp</dimen>
-    <dimen name="aromas_EditText_xxx">450dp</dimen>
-</resources>
