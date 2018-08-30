@@ -8,14 +8,25 @@
     tools:context=".ui.AromasActivity"
     tools:layout_editor_absoluteY="25dp">
 
+    <fragment
+        android:id="@+id/fragmento_menu"
+        android:name="com.trianacodes.script.vapeapp.ui.Menu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_menu" />
+
     <TextView
         android:id="@+id/txtNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="@string/Aromas_Nombre"
-        android:textSize="@dimen/Literales"
-        android:textStyle="bold"
+        android:textSize="@dimen/literales"
         app:layout_constraintBaseline_toBaselineOf="@+id/etNombre"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -28,13 +39,13 @@
         android:ems="10"
         android:hint="@string/Aromas_HintNombre"
         android:inputType="textPersonName"
-        android:textSize="@dimen/Literales"
+        android:textSize="@dimen/literales"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtMarca"
-        style="@style/Literales"
+        style="@style/estilo_literales"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -51,13 +62,13 @@
         android:ems="10"
         android:hint="@string/Aromas_HintMarca"
         android:inputType="textPersonName"
-        android:textSize="@dimen/Literales"
+        android:textSize="@dimen/literales"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etNombre" />
 
     <TextView
         android:id="@+id/txtTipo"
-        style="@style/Literales"
+        style="@style/estilo_literales"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -76,7 +87,7 @@
 
     <TextView
         android:id="@+id/txtPorcentaje"
-        style="@style/Literales"
+        style="@style/estilo_literales"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Aromas_Porcentaje"
@@ -106,7 +117,7 @@
 
     <TextView
         android:id="@+id/txtMinMaceracion"
-        style="@style/Literales"
+        style="@style/estilo_literales"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Aromas_MinMaceracion"
@@ -137,7 +148,7 @@
 
     <TextView
         android:id="@+id/textView"
-        style="@style/Literales"
+        style="@style/estilo_literales"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Aromas_Semanas"
@@ -146,7 +157,7 @@
 
     <TextView
         android:id="@+id/txtMaxMaceracion"
-        style="@style/Literales"
+        style="@style/estilo_literales"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Aromas_MaxMaceracion"
@@ -155,7 +166,7 @@
 
     <TextView
         android:id="@+id/textView3"
-        style="@style/Literales"
+        style="@style/estilo_literales"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Aromas_Semanas"
@@ -164,7 +175,7 @@
 
     <TextView
         android:id="@+id/etMaxMaceracion"
-        android:layout_width="@dimen/Numeros"
+        android:layout_width="@dimen/numeros"
         android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="end"
@@ -210,7 +221,7 @@
 
     <TextView
         android:id="@+id/txtObservaciones"
-        style="@style/Literales"
+        style="@style/estilo_literales"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Aromas_Observaciones"

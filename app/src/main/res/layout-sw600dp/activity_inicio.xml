@@ -9,10 +9,10 @@
 
     <ImageButton
         android:id="@+id/ibCalculadora"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="@dimen/tamano_botones_inicio"
+        android:layout_height="@dimen/tamano_botones_inicio"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/calculadora"
         android:contentDescription="@string/descripcion_botones_inicio"
         android:scaleType="centerCrop"
@@ -21,10 +21,10 @@
 
     <ImageButton
         android:id="@+id/ibAromas"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="@dimen/tamano_botones_inicio"
+        android:layout_height="@dimen/tamano_botones_inicio"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/aromas"
         android:contentDescription="@string/descripcion_botones_inicio"
         android:scaleType="centerCrop"
@@ -33,9 +33,9 @@
 
     <ImageButton
         android:id="@+id/ibAlmacen"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="@dimen/tamano_botones_inicio"
+        android:layout_height="@dimen/tamano_botones_inicio"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="290dp"
         android:background="@drawable/almacenamiento"
         android:contentDescription="@string/descripcion_botones_inicio"
@@ -45,9 +45,9 @@
 
     <ImageButton
         android:id="@+id/ibRecetas"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="@dimen/tamano_botones_inicio"
+        android:layout_height="@dimen/tamano_botones_inicio"
+        android:layout_marginEnd="32dp"
         android:layout_marginTop="290dp"
         android:background="@drawable/recetas"
         android:contentDescription="@string/descripcion_botones_inicio"
@@ -57,8 +57,8 @@
 
     <ImageButton
         android:id="@+id/ibGastos"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_width="@dimen/tamano_botones_inicio"
+        android:layout_height="@dimen/tamano_botones_inicio"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="564dp"
