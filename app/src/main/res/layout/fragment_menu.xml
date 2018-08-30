@@ -19,6 +19,7 @@
             android:id="@+id/ibNuevo"
             style="@style/estilo_botones_menu"
             android:layout_gravity="center_horizontal"
+            android:background="@null"
             android:contentDescription="@string/descripcion_botones_menu"
             android:src="@drawable/nuevo_con" />
 
@@ -29,6 +30,7 @@
             android:id="@+id/ibEditar"
             style="@style/estilo_botones_menu"
             android:layout_gravity="center_horizontal"
+            android:background="@null"
             android:contentDescription="@string/descripcion_botones_menu"
             android:src="@drawable/editar_sin" />
 
@@ -39,6 +41,7 @@
             android:id="@+id/ibEliminar"
             style="@style/estilo_botones_menu"
             android:layout_gravity="center_horizontal"
+            android:background="@null"
             android:contentDescription="@string/descripcion_botones_menu"
             android:src="@drawable/borrar_sin" />
 
@@ -49,6 +52,7 @@
             android:id="@+id/ibLista"
             style="@style/estilo_botones_menu"
             android:layout_gravity="center_horizontal"
+            android:background="@null"
             android:contentDescription="@string/descripcion_botones_menu"
             android:src="@drawable/lista_sin" />
 
