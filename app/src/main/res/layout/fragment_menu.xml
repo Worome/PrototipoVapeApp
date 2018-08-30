@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    tools:context=".ui.Menu">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <ImageButton
+            android:id="@+id/ibNuevo"
+            style="@style/estilo_botones_menu"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/descripcion_botones_menu"
+            android:src="@drawable/nuevo_con" />
+
+        <Space
+            style="@style/estilo_espacio_botones_menu" />
+
+        <ImageButton
+            android:id="@+id/ibEditar"
+            style="@style/estilo_botones_menu"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/descripcion_botones_menu"
+            android:src="@drawable/editar_sin" />
+
+        <Space
+            style="@style/estilo_espacio_botones_menu" />
+
+        <ImageButton
+            android:id="@+id/ibEliminar"
+            style="@style/estilo_botones_menu"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/descripcion_botones_menu"
+            android:src="@drawable/borrar_sin" />
+
+        <Space
+            style="@style/estilo_espacio_botones_menu" />
+
+        <ImageButton
+            android:id="@+id/ibLista"
+            style="@style/estilo_botones_menu"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/descripcion_botones_menu"
+            android:src="@drawable/lista_sin" />
+
+    </LinearLayout>
+
+    <!-- TODO: Update blank fragment layout -->
+
+</FrameLayout>

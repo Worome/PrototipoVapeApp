@@ -38,7 +38,7 @@ public class AromasActivity extends AppCompatActivity {
     private TextView ePorcentaje, eMinMaceracion, eMaxMaceracion;
     private EditText eNombre, eMarca, eObservaciones;
     private String controlVacio;
-    private Button Nuevo, Modificar, Eliminar;
+    private Button Nuevo;
     OperacionesBasesDeDatos operacionesDatos;
     private DbHelper bd;
     private Aromas aroma = new Aromas();
@@ -59,8 +59,7 @@ public class AromasActivity extends AppCompatActivity {
         eMaxMaceracion = findViewById(R.id.etMaxMaceracion);
         eObservaciones = findViewById(R.id.etObservaciones);
         Nuevo = findViewById(R.id.btnAnadir);
-        Modificar = findViewById(R.id.btnModificar);
-        Eliminar = findViewById(R.id.btnEliminar);
+
         // Obtengo una instancia de la base de datos
         operacionesDatos = OperacionesBasesDeDatos.obtenerInstancia(getApplicationContext());
         /* Después del new llamo al constructor de la clase. Si este contructor tuviera que recibir

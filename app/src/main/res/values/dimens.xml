@@ -6,6 +6,9 @@
     <dimen name="tamano_botones_inicio">50dp</dimen>
     <dimen name="tamano_texto_cuadro_dialogo">20sp</dimen>
     <dimen name="tamano_botones_menu">90dp</dimen>
+    <dimen name="espacio">43dp</dimen>
+    <dimen name="ancho_seekbar">100dp</dimen>
+    <dimen name="alto_seekbar">40dp</dimen>
 </resources>
 <!--     <dimen name="aromas_literales_xxx">25sp</dimen>
      -->

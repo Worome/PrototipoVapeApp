@@ -21,4 +21,8 @@
         <item name="android:layout_width">@dimen/tamano_botones_menu</item>
         <item name="android:layout_height">@dimen/tamano_botones_menu</item>
     </style>
+    <style name="estilo_espacio_botones_menu">
+        <item name="android:layout_width">@dimen/espacio</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
 </resources>

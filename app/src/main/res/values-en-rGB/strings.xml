@@ -23,7 +23,7 @@
     <string name="Aromas_HintPorcentaje">0-100</string>
     <string name="Aromas_btnBorrar">Delete</string>
     <string name="Aromas_btnModificar">Update</string>
-    <string name="Aromas_btnAnadir">Insert</string>
+    <string name="Aromas_btnAnadir">Save</string>
     <string name="Aromas_Semanas">(Weeks)</string>
     <string name="Aromas_HintMinMaceracion">0-8</string>
     <string name="Aromas_MinMaceracion">Minimum maceration time</string>

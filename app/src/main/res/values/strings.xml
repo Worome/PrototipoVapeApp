@@ -13,7 +13,7 @@
     <string name="Aromas_HintMinMaceracion">0-8</string>
     <string name="Aromas_Semanas">(Semanas)</string>
     <string name="Aromas_MaxMaceracion">Tiempo máximo maceración</string>
-    <string name="Aromas_btnAnadir">Añadir</string>
+    <string name="Aromas_btnAnadir">Guardar</string>
     <string name="Aromas_btnModificar">Modificar</string>
     <string name="Aromas_btnBorrar">Eliminar</string>
     <string name="Aromas_Valor_0">0</string>
