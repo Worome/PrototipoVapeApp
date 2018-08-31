@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="tamano_botones_inicio">50dp</dimen>
     <dimen name="numeros">50dp</dimen>
     <dimen name="literales">14sp</dimen>
     <dimen name="padd">8dp</dimen>
-    <dimen name="tamano_botones_inicio">50dp</dimen>
     <dimen name="tamano_texto_cuadro_dialogo">20sp</dimen>
     <dimen name="tamano_botones_menu">90dp</dimen>
     <dimen name="espacio">43dp</dimen>
