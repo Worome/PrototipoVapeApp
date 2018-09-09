@@ -3,7 +3,7 @@
     <dimen name="tamano_botones_inicio">150dp</dimen>
     <dimen name="tamano_botones_menu">65dp</dimen>
     <dimen name="espacio">30dp</dimen>
-    <dimen name="literales">13sp</dimen>
+    <dimen name="literales">16sp</dimen>
     <dimen name="numeros">45dp</dimen>
     <dimen name="ancho_seekbar">100dp</dimen>
     <dimen name="alto_seekbar">38dp</dimen>
