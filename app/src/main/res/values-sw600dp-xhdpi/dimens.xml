@@ -6,5 +6,5 @@
     <dimen name="literales">25sp</dimen>
     <dimen name="numeros">45dp</dimen>
     <dimen name="ancho_seekbar">150dp</dimen>
-    <dimen name="alto_seekbar">50dp</dimen>
+    <dimen name="alto_seekbar">40dp</dimen>
 </resources>

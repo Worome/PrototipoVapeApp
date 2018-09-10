@@ -29,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:text="@string/Aromas_Nombre"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
@@ -52,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:text="@string/Aromas_Marca"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNombre" />
@@ -75,7 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:text="@string/Aromas_Tipo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtMarca" />
@@ -94,7 +94,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:text="@string/Aromas_Porcentaje"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTipo" />
@@ -116,7 +116,7 @@
         android:layout_width="@dimen/ancho_seekbar"
         android:layout_height="@dimen/alto_seekbar"
         android:layout_marginEnd="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:max="100"
         android:progress="0"
         android:progressDrawable="@drawable/seekbar_progress"
@@ -130,7 +130,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:text="@string/Aromas_MinMaceracion"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPorcentaje" />
@@ -153,7 +153,7 @@
         android:layout_width="@dimen/ancho_seekbar"
         android:layout_height="@dimen/alto_seekbar"
         android:layout_marginEnd="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:max="8"
         android:progress="0"
         android:progressDrawable="@drawable/seekbar_progress"
@@ -178,7 +178,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:text="@string/Aromas_MaxMaceracion"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtMinMaceracion" />
@@ -211,7 +211,7 @@
         android:layout_width="@dimen/ancho_seekbar"
         android:layout_height="@dimen/alto_seekbar"
         android:layout_marginEnd="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:max="8"
         android:progress="0"
         android:progressDrawable="@drawable/seekbar_progress"
@@ -225,7 +225,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:text="@string/Aromas_Observaciones"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView3" />
@@ -270,6 +270,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="443dp" />
+        app:layout_constraintGuide_begin="383dp" />
 
 </android.support.constraint.ConstraintLayout>
