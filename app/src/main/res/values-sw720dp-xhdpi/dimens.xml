@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="tamano_botones_inicio">250dp</dimen>
-    <dimen name="tamano_botones_menu">150dp</dimen>
+    <dimen name="tamano_botones_menu">125dp</dimen>
     <dimen name="espacio">30dp</dimen>
     <dimen name="literales">30sp</dimen>
-    <dimen name="numeros">45dp</dimen>
-    <dimen name="ancho_seekbar">100dp</dimen>
-    <dimen name="alto_seekbar">38dp</dimen>
+    <dimen name="numeros">55dp</dimen>
+    <dimen name="ancho_seekbar">150dp</dimen>
+    <dimen name="alto_seekbar">40dp</dimen>
 </resources>
