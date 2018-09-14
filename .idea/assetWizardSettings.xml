@@ -23,7 +23,8 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="scalingPercent" value="139" />
+                                                <entry key="scalingPercent" value="114" />
+                                                <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -33,7 +34,7 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="foregroundImage" value="F:\Clientes\TrianaCodes\Android\Imagenes\iconoApp\icono3.png" />
+                                      <entry key="foregroundImage" value="F:\Clientes\TrianaCodes\Android\Imagenes\iconoApp\IconoVapeapp.png" />
                                     </map>
                                   </option>
                                 </PersistentState>

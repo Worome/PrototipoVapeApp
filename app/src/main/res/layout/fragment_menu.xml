@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:gravity="center"
         android:orientation="horizontal"
         android:weightSum="1">
 
@@ -21,21 +22,9 @@
             android:layout_gravity="center_horizontal"
             android:background="@null"
             android:contentDescription="@string/descripcion_botones_menu"
-            android:src="@drawable/nuevo_con" />
+            android:src="@drawable/anadir_inactivo" />
 
-        <Space
-            style="@style/estilo_espacio_botones_menu" />
-
-        <ImageButton
-            android:id="@+id/ibEditar"
-            style="@style/estilo_botones_menu"
-            android:layout_gravity="center_horizontal"
-            android:background="@null"
-            android:contentDescription="@string/descripcion_botones_menu"
-            android:src="@drawable/editar_sin" />
-
-        <Space
-            style="@style/estilo_espacio_botones_menu" />
+        <Space style="@style/estilo_espacio_botones_menu" />
 
         <ImageButton
             android:id="@+id/ibEliminar"
@@ -43,10 +32,9 @@
             android:layout_gravity="center_horizontal"
             android:background="@null"
             android:contentDescription="@string/descripcion_botones_menu"
-            android:src="@drawable/borrar_sin" />
+            android:src="@drawable/eliminar_inactivo" />
 
-        <Space
-            style="@style/estilo_espacio_botones_menu" />
+        <Space style="@style/estilo_espacio_botones_menu" />
 
         <ImageButton
             android:id="@+id/ibLista"
@@ -54,7 +42,7 @@
             android:layout_gravity="center_horizontal"
             android:background="@null"
             android:contentDescription="@string/descripcion_botones_menu"
-            android:src="@drawable/lista_sin" />
+            android:src="@drawable/lista_activo" />
 
     </LinearLayout>
 

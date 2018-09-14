@@ -28,42 +28,40 @@
         style="@style/estilo_literales"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
         android:text="@string/Aromas_Nombre"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <EditText
         android:id="@+id/etNombre"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="@string/Aromas_HintNombre"
         android:inputType="textPersonName"
         android:textSize="@dimen/literales"
         app:layout_constraintBaseline_toBaselineOf="@+id/txtNombre"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/etMarca" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/txtMarca"
         style="@style/estilo_literales"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
         android:text="@string/Aromas_Marca"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNombre" />
 
     <EditText
         android:id="@+id/etMarca"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="@string/Aromas_HintMarca"
         android:inputType="textPersonName"
@@ -76,8 +74,8 @@
         style="@style/estilo_literales"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
         android:text="@string/Aromas_Tipo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtMarca" />
@@ -86,7 +84,7 @@
         android:id="@+id/spTipo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/txtTipo"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -95,8 +93,8 @@
         style="@style/estilo_literales"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
         android:text="@string/Aromas_Porcentaje"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTipo" />
@@ -106,7 +104,7 @@
         style="@style/estilo_literales"
         android:layout_width="@dimen/numeros"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="72dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:gravity="end"
         android:text="@string/Aromas_Valor_0"
@@ -117,8 +115,8 @@
         android:id="@+id/sbPorcentaje"
         android:layout_width="@dimen/ancho_seekbar"
         android:layout_height="@dimen/alto_seekbar"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="36dp"
         android:max="100"
         android:progress="0"
         android:progressDrawable="@drawable/seekbar_progress"
@@ -131,8 +129,8 @@
         style="@style/estilo_literales"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
         android:text="@string/Aromas_MinMaceracion"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPorcentaje" />
@@ -142,7 +140,7 @@
         style="@style/estilo_literales"
         android:layout_width="@dimen/numeros"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="72dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:gravity="end"
         android:hint="@string/Aromas_HintMinMaceracion"
@@ -154,8 +152,8 @@
         android:id="@+id/sbMinMaceracion"
         android:layout_width="@dimen/ancho_seekbar"
         android:layout_height="@dimen/alto_seekbar"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="36dp"
         android:max="8"
         android:progress="0"
         android:progressDrawable="@drawable/seekbar_progress"
@@ -169,7 +167,7 @@
         style="@style/estilo_literales"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
+        android:layout_marginStart="48dp"
         android:text="@string/Aromas_Semanas"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtMinMaceracion" />
@@ -179,8 +177,8 @@
         style="@style/estilo_literales"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
         android:text="@string/Aromas_MaxMaceracion"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtMinMaceracion" />
@@ -190,7 +188,7 @@
         style="@style/estilo_literales"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
+        android:layout_marginStart="48dp"
         android:text="@string/Aromas_Semanas"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtMaxMaceracion" />
@@ -200,7 +198,7 @@
         style="@style/estilo_literales"
         android:layout_width="@dimen/numeros"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="72dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:gravity="end"
         android:hint="@string/Aromas_HintMinMaceracion"
@@ -212,8 +210,8 @@
         android:id="@+id/sbMaxMaceracion"
         android:layout_width="@dimen/ancho_seekbar"
         android:layout_height="@dimen/alto_seekbar"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="36dp"
         android:max="8"
         android:progress="0"
         android:progressDrawable="@drawable/seekbar_progress"
@@ -226,8 +224,8 @@
         style="@style/estilo_literales"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
         android:text="@string/Aromas_Observaciones"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView3" />
@@ -236,7 +234,7 @@
         android:id="@+id/etObservaciones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="@string/Aromas_Observaciones"
         android:inputType="textMultiLine"
@@ -265,13 +263,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="108dp" />
+        app:layout_constraintGuide_begin="72dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="796dp" />
+        app:layout_constraintGuide_begin="625dp" />
 
 </android.support.constraint.ConstraintLayout>

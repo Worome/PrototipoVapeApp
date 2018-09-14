@@ -155,7 +155,7 @@
         android:layout_width="@dimen/ancho_seekbar"
         android:layout_height="@dimen/alto_seekbar"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="48dp"
         android:max="8"
         android:progress="0"
         android:progressDrawable="@drawable/seekbar_progress"
@@ -213,7 +213,7 @@
         android:layout_width="@dimen/ancho_seekbar"
         android:layout_height="@dimen/alto_seekbar"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="56dp"
         android:max="8"
         android:progress="0"
         android:progressDrawable="@drawable/seekbar_progress"
@@ -272,6 +272,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="796dp" />
+        app:layout_constraintGuide_begin="776dp" />
 
 </android.support.constraint.ConstraintLayout>
